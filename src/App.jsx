@@ -1,22 +1,20 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
 import FacultiesList from "./pages/FacultiesList";
 import FavoritesFaculties from "./pages/FavoritesFaculties";
+import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
   return (
-    <>
+    <GlobalProvider>
       <BrowserRouter>
-        <nav>
-          <NavLink to="/">Faculty List</NavLink>
-          <NavLink to="/favorites">Your favorites Faculties</NavLink>
-        </nav>
-
+        <Navbar />
         <Routes>
           <Route path="/" element={<FacultiesList />} />
           <Route path="/favorites" element={<FavoritesFaculties />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </GlobalProvider>
   );
 }
 
