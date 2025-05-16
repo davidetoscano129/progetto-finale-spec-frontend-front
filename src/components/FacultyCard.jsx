@@ -1,4 +1,6 @@
-export default function FacultyCard({ faculty }) {
+import { memo } from "react";
+
+const Facultycard = memo(({ faculty }) => {
   return (
     <div className="col-md-6 col-lg-4">
       <article className="card h-100">
@@ -13,4 +15,6 @@ export default function FacultyCard({ faculty }) {
       </article>
     </div>
   );
-}
+});
+
+export default Facultycard;

@@ -1,0 +1,24 @@
+import { useState, useEffect } from "react";
+const { VITE_API_URL } = import.meta.env;
+
+export default function useFaculties() {
+  const [faculties, setFaculties] = useState([]);
+
+  useEffect(() => {
+    fetch(`${VITE_API_URL}/faculties`)
+      .then((response) => response.json())
+      .then((data) => {
+        // Verifica e aggiunge id se mancante
+        const validatedData = data.map((faculty, index) => ({
+          ...faculty,
+          id: faculty.id || `faculty-${index}`,
+        }));
+
+        console.log("Validated data:", validatedData);
+        setFaculties(validatedData);
+      })
+      .catch((error) => console.error("Error:", error));
+  }, []);
+
+  return { faculties };
+}
