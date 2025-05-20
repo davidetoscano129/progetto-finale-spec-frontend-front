@@ -3,23 +3,74 @@ import FavoriteButton from "./FavoriteButton";
 export default function FacultyInfo({ faculty }) {
   return (
     <div className="card-body">
-      <div className="d-flex justify-content-between align-items-start">
+      {/* Header with Title and Favorite Button */}
+      <div className="d-flex justify-content-between align-items-start mb-3">
         <h2 className="card-title h2">{faculty.title}</h2>
         <FavoriteButton faculty={faculty} />
       </div>
-      <span className="badge bg-primary mb-3">{faculty.category}</span>
 
+      {/* Category Badge */}
+      <div className="mb-4">
+        <span className="badge bg-primary">
+          <i className="bi bi-bookmark-fill me-2"></i>
+          {faculty.category}
+        </span>
+      </div>
+
+      {/* Faculty Details */}
       <ul className="list-group mb-3">
-        <li className="list-group-item">Duration: {faculty.duration} years</li>
-        <li className="list-group-item">Credits: {faculty.credits}</li>
-        <li className="list-group-item">
-          Max Students: {faculty.maxStudents || "No limit"}
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            <i className="bi bi-clock me-2"></i>
+            Duration
+          </span>
+          <span className="badge bg-secondary">{faculty.duration} years</span>
         </li>
-        <li className="list-group-item">
-          Admission Test: {faculty.admissionTest ? "Yes" : "No"}
+
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            <i className="bi bi-award me-2"></i>
+            Credits
+          </span>
+          <span className="badge bg-secondary">{faculty.credits} CFU</span>
         </li>
-        <li className="list-group-item">
-          Closed Course: {faculty.closedCourse ? "Yes" : "No"}
+
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            <i className="bi bi-people me-2"></i>
+            Max Students
+          </span>
+          <span className="badge bg-secondary">
+            {faculty.maxStudents || "No limit"}
+          </span>
+        </li>
+
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            <i className="bi bi-pencil-square me-2"></i>
+            Admission Test
+          </span>
+          <span
+            className={`badge ${
+              faculty.admissionTest ? "bg-success" : "bg-danger"
+            }`}
+          >
+            {faculty.admissionTest ? "Required" : "Not Required"}
+          </span>
+        </li>
+
+        <li className="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            <i className="bi bi-lock me-2"></i>
+            Closed Course
+          </span>
+          <span
+            className={`badge ${
+              faculty.closedCourse ? "bg-warning" : "bg-success"
+            }`}
+          >
+            {faculty.closedCourse ? "Limited Seats" : "Open Access"}
+          </span>
         </li>
       </ul>
     </div>

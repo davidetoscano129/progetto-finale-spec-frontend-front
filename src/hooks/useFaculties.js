@@ -8,7 +8,6 @@ export default function useFaculties() {
     fetch(`${VITE_API_URL}/faculties`)
       .then((response) => response.json())
       .then((data) => {
-        // Verifica e aggiunge id se mancante
         const validatedData = data.map((faculty, index) => ({
           ...faculty,
           id: faculty.id || `faculty-${index}`,
