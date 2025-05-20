@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
-import FacultyCard from "../components/FacultyCard";
+import FacultyCard from "../components/faculty/FacultyCard";
 
 export default function FacultiesList() {
   const { faculties } = useContext(GlobalContext);

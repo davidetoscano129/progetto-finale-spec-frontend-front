@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 
 const FacultyCard = memo(({ faculty }) => {
-  console.log("Rendering FacultyCard:", faculty);
-
   return (
     <div className="col-md-6 col-lg-4">
       <article className="card h-100">
@@ -20,7 +18,7 @@ const FacultyCard = memo(({ faculty }) => {
             </h5>
             <FavoriteButton faculty={faculty} />
           </div>
-
+          
           <p className="card-text">
             <span className="badge bg-primary">{faculty.category}</span>
           </p>
