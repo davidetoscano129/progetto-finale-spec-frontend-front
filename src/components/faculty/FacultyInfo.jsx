@@ -1,6 +1,10 @@
 import FavoriteButton from "./FavoriteButton";
 
 export default function FacultyInfo({ faculty }) {
+  if (!faculty || !faculty.details) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="card-body">
       {/* Header with Title and Favorite Button */}
@@ -24,7 +28,9 @@ export default function FacultyInfo({ faculty }) {
             <i className="bi bi-clock me-2"></i>
             Duration
           </span>
-          <span className="badge bg-secondary">{faculty.duration} years</span>
+          <span className="badge bg-secondary">
+            {faculty.details.duration} years
+          </span>
         </li>
 
         <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -32,7 +38,9 @@ export default function FacultyInfo({ faculty }) {
             <i className="bi bi-award me-2"></i>
             Credits
           </span>
-          <span className="badge bg-secondary">{faculty.credits} CFU</span>
+          <span className="badge bg-secondary">
+            {faculty.details.credits} CFU
+          </span>
         </li>
 
         <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -41,7 +49,7 @@ export default function FacultyInfo({ faculty }) {
             Max Students
           </span>
           <span className="badge bg-secondary">
-            {faculty.maxStudents || "No limit"}
+            {faculty.details.maxStudents || "No limit"}
           </span>
         </li>
 
@@ -52,10 +60,10 @@ export default function FacultyInfo({ faculty }) {
           </span>
           <span
             className={`badge ${
-              faculty.admissionTest ? "bg-success" : "bg-danger"
+              faculty.details.admissionTest ? "bg-success" : "bg-danger"
             }`}
           >
-            {faculty.admissionTest ? "Required" : "Not Required"}
+            {faculty.details.admissionTest ? "Required" : "Not Required"}
           </span>
         </li>
 
@@ -66,10 +74,10 @@ export default function FacultyInfo({ faculty }) {
           </span>
           <span
             className={`badge ${
-              faculty.closedCourse ? "bg-warning" : "bg-success"
+              faculty.details.closedCourse ? "bg-warning" : "bg-success"
             }`}
           >
-            {faculty.closedCourse ? "Limited Seats" : "Open Access"}
+            {faculty.details.closedCourse ? "Limited Seats" : "Open Access"}
           </span>
         </li>
       </ul>

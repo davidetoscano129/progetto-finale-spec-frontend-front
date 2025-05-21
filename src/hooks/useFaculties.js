@@ -13,7 +13,6 @@ export default function useFaculties() {
           id: faculty.id || `faculty-${index}`,
         }));
 
-        console.log("Validated data:", validatedData);
         setFaculties(validatedData);
       })
       .catch((error) => console.error("Error:", error));

@@ -4,6 +4,14 @@ import FavoriteButton from "./FavoriteButton";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const FacultyCard = memo(({ faculty }) => {
+  if (!faculty || !faculty.details) {
+    return (
+      <div className="col-md-6 col-lg-4">
+        <div className="card h-100">Invalid faculty data</div>
+      </div>
+    );
+  }
+
   return (
     <div className="col-md-6 col-lg-4">
       <article className="card h-100 shadow-sm hover-card">
@@ -36,12 +44,12 @@ const FacultyCard = memo(({ faculty }) => {
           <div className="text-muted small">
             <div className="mb-1">
               <span className="bi bi-clock me-1" aria-hidden="true"></span>
-              Duration: {faculty.duration} years
+              Duration: {faculty.details.duration} years
             </div>
-            {faculty.maxStudents && (
+            {faculty.details.maxStudents && (
               <div>
                 <span className="bi bi-people me-1" aria-hidden="true"></span>
-                Max Students: {faculty.maxStudents}
+                Max Students: {faculty.details.maxStudents}
               </div>
             )}
           </div>

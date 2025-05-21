@@ -10,10 +10,7 @@ export default function FavoritesFaculties() {
     <main className="container py-5">
       {/* Header Section */}
       <header className="text-center mb-5">
-        <h1 className="display-4 mb-3">
-          <i className="bi bi-heart-fill text-danger me-2"></i>
-          Your Favorite Faculties
-        </h1>
+        <h1 className="display-4 mb-3">Your Favorite Faculties</h1>
         <p className="lead text-muted">
           Keep track of the faculties you're interested in comparing
         </p>
@@ -43,7 +40,6 @@ export default function FavoritesFaculties() {
                 {favorites.length === 1 ? "faculty" : "faculties"} saved
               </small>
             </div>
-
             <div className="row g-4">
               {favorites.map((faculty) => (
                 <FacultyCard key={faculty.id} faculty={faculty} />
