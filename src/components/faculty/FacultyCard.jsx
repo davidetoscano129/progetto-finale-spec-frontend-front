@@ -1,9 +1,11 @@
 import { memo } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const FacultyCard = memo(({ faculty }) => {
+const FacultyCard = memo(({ faculty, onFavorite }) => {
+  const navigate = useNavigate();
+
   if (!faculty || !faculty.details) {
     return (
       <div className="col-md-6 col-lg-4">
@@ -12,21 +14,31 @@ const FacultyCard = memo(({ faculty }) => {
     );
   }
 
+  // Card click handling (excluding FavoriteButton)
+  const handleCardClick = () => {
+    navigate(`/faculty/${faculty.id}`);
+  };
+
   return (
     <div className="col-md-6 col-lg-4">
-      <article className="card h-100 shadow-sm hover-card">
+      <article
+        className="card h-100 shadow-sm hover-card"
+        style={{ cursor: "pointer" }}
+        onClick={handleCardClick}
+      >
         <div className="card-body">
           {/* Title and Favorite Button */}
           <div className="d-flex justify-content-between align-items-start mb-3">
             <h5 className="card-title mb-0">
-              <Link
-                to={`/faculty/${faculty.id}`}
-                className="text-decoration-none stretched-link"
-              >
-                {faculty.title}
-              </Link>
+              <span className="text-decoration-none">{faculty.title}</span>
             </h5>
-            <FavoriteButton faculty={faculty} />
+            <FavoriteButton
+              faculty={faculty}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onFavorite) onFavorite(faculty);
+              }}
+            />
           </div>
 
           {/* Category Badge */}
