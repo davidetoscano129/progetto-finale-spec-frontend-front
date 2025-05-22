@@ -1,0 +1,29 @@
+.faculties-hero-section {
+  position: relative;
+  background-image: url('brightspot.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 440px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.faculties-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(23,35,61,0.7);
+  z-index: 1;
+}
+
+.faculties-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

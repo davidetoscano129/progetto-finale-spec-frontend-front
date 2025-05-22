@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../../context/FavoritesContext";
+import "./FavoriteButton.css";
 
 const FavoriteButton = ({ faculty, onClick }) => {
   const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
@@ -13,7 +14,7 @@ const FavoriteButton = ({ faculty, onClick }) => {
   return (
     <button
       type="button"
-      className={`btn btn-${isFav ? "danger" : "outline-danger"} btn-sm favorite-btn`}
+      className={`favorite-btn btn btn-${isFav ? "danger" : "outline-danger"} btn-sm`}
       onClick={(e) => {
         handleClick(e);
         toggleFavorite(faculty);

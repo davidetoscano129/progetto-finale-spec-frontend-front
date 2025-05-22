@@ -1,0 +1,87 @@
+.faculties-hero {
+  background: linear-gradient(120deg, #0f223a 80%, #1a2d4a 100%);
+  color: #fff;
+  padding: 64px 0 48px 0;
+  margin-bottom: 0;
+}
+
+/* Box contenitore cards */
+.faculties-cards-box {
+  background: #fff;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+}
+
+.faculties-cards-wrapper {
+  background: #f8fafc; /* Colore chiaro, diverso dal bianco puro */
+  box-shadow: 0 4px 32px 0 rgba(15, 34, 58, 0.08);
+  border-radius: 2rem;
+  padding: 3rem 2rem 2rem 2rem;
+  margin: 2rem 0;
+  transition: box-shadow 0.2s;
+}
+
+.faculty-harvard-card {
+  border-radius: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 4px 24px 0 rgba(15, 34, 58, 0.08);
+}
+.faculty-harvard-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(15, 34, 58, 0.16);
+  transform: translateY(-4px) scale(1.02);
+  z-index: 2;
+}
+
+/* SearchBar stile hero */
+.hero-search-input,
+.form-select.hero-search-input {
+  background: #16243a;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.hero-search-input:focus,
+.form-select.hero-search-input:focus {
+  background: #1a2d4a;
+  color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(15, 34, 58, 0.16);
+  border: none;
+}
+
+.hero-search-input::placeholder {
+  color: #bfc9da;
+  opacity: 1;
+}
+
+.search-container label {
+  color: #bfc9da !important;
+  font-weight: 500;
+}
+
+/* Select stile hero */
+.form-select.hero-search-input {
+  height: 58px;
+  padding-left: 1.5rem;
+}
+
+/* Bottone stile hero */
+.btn.hero-btn {
+  background: #16243a;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.15rem;
+  min-height: 58px;
+  min-width: 90px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.btn.hero-btn:hover, .btn.hero-btn:focus {
+  background: #1a2d4a;
+  color: #fff;
+}

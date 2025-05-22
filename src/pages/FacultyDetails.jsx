@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import FacultyInfo from "../components/faculty/FacultyInfo";
+import "./FacultyDetails.css";
 
 export default function FacultyDetails() {
   const { id } = useParams();
@@ -26,27 +27,20 @@ export default function FacultyDetails() {
   }
 
   return (
-    <main className="container py-5">
-      {/* Header */}
-      <header className="text-center mb-5">
-        <h1 className="display-4 mb-3">{faculty.title}</h1>
-        <p className="lead text-muted">
-          Compare this faculty with others to make the best choice
-        </p>
-      </header>
-
-      {/* Comparison Section */}
+    <main className="container py-5 faculty-details-main">
       <section className="row g-4">
         {/* Main Faculty Card */}
         <article className={compareWith ? "col-md-6" : "col-12"}>
-          <div className="card shadow-sm">
+          <div className="card shadow-sm faculty-details-card">
             <div className="card-header bg-light">
               <h2 className="h5 mb-0">Faculty Details</h2>
             </div>
             <FacultyInfo faculty={faculty} />
             {!compareWith && (
               <footer className="card-footer">
-                <label className="form-label">Compare with another faculty</label>
+                <label className="form-label">
+                  Compare with another faculty
+                </label>
                 <select
                   className="form-select"
                   onChange={(e) =>
@@ -74,7 +68,7 @@ export default function FacultyDetails() {
         {/* Comparison Faculty Card */}
         {compareWith && (
           <article className="col-md-6">
-            <div className="card shadow-sm">
+            <div className="card shadow-sm faculty-details-card">
               <div className="card-header bg-light">
                 <h2 className="h5 mb-0">Comparison Faculty</h2>
               </div>

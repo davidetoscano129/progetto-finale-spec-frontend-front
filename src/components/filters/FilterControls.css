@@ -1,0 +1,39 @@
+.filter-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-category-select {
+  background: #17233d;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.filter-category-select:focus {
+  background: #1a2d4a;
+  color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(15, 34, 58, 0.16);
+  border: none;
+}
+
+.filter-sort-btn {
+  background: #17233d;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1.05rem;
+  min-width: 70px;
+  min-height: 48px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.filter-sort-btn:hover,
+.filter-sort-btn:focus {
+  background: #1a2d4a;
+  color: #fff;
+}

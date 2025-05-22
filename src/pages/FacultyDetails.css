@@ -1,0 +1,25 @@
+.faculty-details-main {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.faculty-details-card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.faculty-details-card .card-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #f4f6fa !important;
+}
+
+.faculty-details-card .card-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 767px) {
+  .faculty-details-card {
+    margin-bottom: 1.5rem;
+  }
+}
