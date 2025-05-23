@@ -62,3 +62,9 @@
   width: 25%;
   min-width: 180px;
 }
+
+.clickable-row:hover,
+.clickable-row:focus {
+  background: #f4f6fa;
+  transition: background 0.15s;
+}

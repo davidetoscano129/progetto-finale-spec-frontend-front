@@ -41,9 +41,12 @@ export default function FacultiesList() {
   return (
     <main className="container-fluid p-0">
       {/* HERO SECTION */}
-      <section className="faculties-hero-section mb-5">
-        <div className="faculties-hero-overlay" />
-        <div className="faculties-hero-content">
+      <section
+        className="hero-section mb-5"
+        style={{ backgroundImage: 'url("brightspot.jpg")' }}
+      >
+        <div className="hero-overlay" />
+        <div className="hero-content">
           <h1 className="display-3 fw-bold mb-3">Find Your Perfect Faculty</h1>
           <p className="lead mb-2">
             Compare different faculties and make an informed choice for your
@@ -62,7 +65,9 @@ export default function FacultiesList() {
                 <th style={{ textAlign: "left", width: "30%" }}>
                   <div className="search-sort-row">
                     <button
-                      className={`sort-btn sort-btn--small${sortAsc ? " active" : ""}`}
+                      className={`sort-btn sort-btn--small${
+                        sortAsc ? " active" : ""
+                      }`}
                       onClick={() => setSortAsc((asc) => !asc)}
                       aria-label="Toggle alphabetical order"
                     >
