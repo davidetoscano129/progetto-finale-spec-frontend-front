@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
-import FacultyCard from "../components/faculty/FacultyCard";
+import FacultyRow from "../components/faculty/FacultyRow";
 import SearchBar from "../components/filters/SearchBar";
 import FilterControls from "../components/filters/FilterControls";
 import { debounce } from "../utils/debounce";
@@ -54,50 +54,53 @@ export default function FacultiesList() {
         </div>
       </section>
 
-      <div className="container">
-        <div className="row align-items-center g-2 mb-4">
-          <div className="col-12 col-md-8">
-            <SearchBar value={searchTerm} onChange={debouncedSearch} />
-          </div>
-          <div className="col-12 col-md-4">
-            <FilterControls
-              categories={categories}
-              selectedCategory={selectedCategory}
-              onCategoryChange={setSelectedCategory}
-              sortAsc={sortAsc}
-              onSortChange={setSortAsc}
-            />
-          </div>
+      <section>
+        <div className="faculties-cards-wrapper">
+          <table className="faculty-table" style={{ width: "100%" }}>
+            <thead>
+              <tr>
+                <th style={{ textAlign: "left", width: "30%" }}>
+                  <div className="search-sort-row">
+                    <button
+                      className={`sort-btn sort-btn--small${sortAsc ? " active" : ""}`}
+                      onClick={() => setSortAsc((asc) => !asc)}
+                      aria-label="Toggle alphabetical order"
+                    >
+                      {sortAsc ? "A→Z" : "Z→A"}
+                    </button>
+                    <input
+                      className="search-bar-input"
+                      placeholder="Search faculties..."
+                      value={searchTerm}
+                      onChange={(e) => debouncedSearch(e.target.value)}
+                    />
+                  </div>
+                </th>
+                <th style={{ textAlign: "left", width: "25%" }}>
+                  <select
+                    className="category-dropdown"
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                  >
+                    <option value="">All Categories</option>
+                    {categories.map((cat) => (
+                      <option key={cat} value={cat}>
+                        {cat}
+                      </option>
+                    ))}
+                  </select>
+                </th>
+                <th style={{ textAlign: "right" }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredFaculties.map((faculty) => (
+                <FacultyRow key={faculty.id} faculty={faculty} />
+              ))}
+            </tbody>
+          </table>
         </div>
-
-        <section>
-          {filteredFaculties.length === 0 ? (
-            <div className="text-center py-5">
-              <p className="text-muted mb-0">No faculties found</p>
-              <small className="text-muted">
-                Try adjusting your search criteria
-              </small>
-            </div>
-          ) : (
-            <>
-              <div className="d-flex justify-content-between align-items-center mb-4">
-                <span className="text-muted">
-                  Showing {filteredFaculties.length} of {faculties.length}{" "}
-                  faculties
-                </span>
-              </div>
-              {/* BOX CONTENITORE CARDS */}
-              <div className="faculties-cards-wrapper mb-5">
-                <div className="row g-4">
-                  {filteredFaculties.map((faculty) => (
-                    <FacultyCard key={faculty.id} faculty={faculty} />
-                  ))}
-                </div>
-              </div>
-            </>
-          )}
-        </section>
-      </div>
+      </section>
     </main>
   );
 }

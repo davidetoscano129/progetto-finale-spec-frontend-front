@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../context/FavoritesContext";
-import FacultyCard from "../components/faculty/FacultyCard";
+import FacultyRow from "../components/faculty/FacultyRow";
 
 export default function FavoritesFaculties() {
   const { favorites } = useContext(FavoritesContext);
@@ -42,7 +42,7 @@ export default function FavoritesFaculties() {
             </div>
             <div className="row g-4">
               {favorites.map((faculty) => (
-                <FacultyCard key={faculty.id} faculty={faculty} />
+                <FacultyRow key={faculty.id} faculty={faculty} />
               ))}
             </div>
           </>

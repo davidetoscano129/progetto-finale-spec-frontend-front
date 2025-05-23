@@ -3,18 +3,18 @@ import "./SearchBar.css";
 
 const SearchBar = memo(({ value, onChange }) => {
   return (
-    <div className="form-floating search-container">
+    <div className="search-container">
       <input
         type="search"
-        className="form-control search-input hero-search-input"
+        className="search-input hero-search-input"
         id="searchFaculties"
-        placeholder="Search in titles..."
+        placeholder="Search faculties..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-label="Search faculties"
       />
-      <label htmlFor="searchFaculties">
-        <i className="bi bi-search me-2"></i>
+      <label htmlFor="searchFaculties" className="search-label">
+        <span className="search-icon" aria-hidden="true">🔍</span>
         Search faculties...
       </label>
     </div>

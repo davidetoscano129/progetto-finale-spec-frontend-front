@@ -11,30 +11,25 @@ const FilterControls = memo(
   }) => {
     return (
       <div className="filter-controls">
-        <div className="form-floating flex-grow-1">
-          <select
-            className="form-select filter-category-select"
-            id="categoryFilter"
-            value={selectedCategory}
-            onChange={(e) => onCategoryChange(e.target.value)}
-            aria-label="Filter faculties by category"
-          >
-            <option value="">All Categories</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <label htmlFor="categoryFilter" className="text-white">
-            <i className="bi bi-funnel me-2"></i>
-            Category
-          </label>
-        </div>
+        <select
+          className="filter-category-select"
+          id="categoryFilter"
+          value={selectedCategory}
+          onChange={(e) => onCategoryChange(e.target.value)}
+          aria-label="Filter faculties by category"
+        >
+          <option value="">All Categories</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
         <button
-          className="btn filter-sort-btn d-flex align-items-center justify-content-center"
+          className="filter-sort-btn"
           onClick={() => onSortChange(!sortAsc)}
           type="button"
+          aria-label="Toggle alphabetical order"
         >
           {sortAsc ? "A → Z" : "Z → A"}
         </button>

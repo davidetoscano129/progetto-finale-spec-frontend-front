@@ -9,18 +9,10 @@ export default function Navbar() {
           Faculty Comparator
         </span>
         <ul className="navbar-nav flex-row gap-4 mb-0">
-          <NavBarLink
-            to="/"
-            className="nav-link custom-navbar-link"
-            activeStyle={{ color: "#4fc3f7" }}
-          >
+          <NavBarLink to="/" className="nav-link custom-navbar-link">
             List
           </NavBarLink>
-          <NavBarLink
-            to="/favorites"
-            className="nav-link custom-navbar-link"
-            activeStyle={{ color: "#4fc3f7" }}
-          >
+          <NavBarLink to="/favorites" className="nav-link custom-navbar-link">
             Favorites
           </NavBarLink>
         </ul>

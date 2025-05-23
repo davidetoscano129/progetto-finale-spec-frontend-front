@@ -21,3 +21,25 @@
   outline: 2px solid #4fc3f7;
   outline-offset: 2px;
 }
+
+/* FilterControls.css */
+.filter-btn, .sort-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  color: #222;
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.3rem;
+  border-radius: 0;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.filter-btn.active, .sort-btn.active,
+.filter-btn:hover, .sort-btn:hover {
+  border-bottom: 2px solid #b91c1c;
+  color: #b91c1c;
+  background: #fafafa;
+}

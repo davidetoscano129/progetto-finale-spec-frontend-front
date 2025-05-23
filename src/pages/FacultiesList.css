@@ -1,6 +1,6 @@
 .faculties-hero-section {
   position: relative;
-  background-image: url('brightspot.jpg');
+  background-image: url("brightspot.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 .faculties-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(23,35,61,0.7);
+  background: rgba(23, 35, 61, 0.7);
   z-index: 1;
 }
 
@@ -26,4 +26,93 @@
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.faculties-cards-wrapper {
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* FacultiesList.css */
+.search-bar-input,
+.category-dropdown {
+  width: 100%;
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  padding: 0.4rem 0.6rem;
+  border: none; /* Nessun bordo */
+  background: transparent;
+  color: #222;
+  outline: none;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.search-bar-input:focus,
+.category-dropdown:focus {
+  background: #fafafa;
+}
+
+/* Mantieni il bordo della tabella */
+.faculty-table th,
+.faculty-table td {
+  border-bottom: 1.5px solid #222;
+  /* ...resto del tuo stile... */
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.sort-btn.active,
+.sort-btn:hover,
+.sort-btn:focus {
+  border-bottom: 2px solid #b91c1c;
+  color: #b91c1c;
+  background: #fafafa;
+}
+
+.sort-arrow {
+  font-size: 1rem;
+  margin-left: 0.2rem;
+}
+
+.sort-btn--small {
+  font-size: 0.95rem;
+  padding: 0.2rem 0.5rem;
+  background: none;
+  border: none;
+  color: #b91c1c;
+  border-bottom: 1.5px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  margin-right: 0.2rem;
+  line-height: 1;
+}
+
+.sort-btn--small.active,
+.sort-btn--small:hover,
+.sort-btn--small:focus {
+  border-bottom: none;
+}
+
+.search-sort-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
