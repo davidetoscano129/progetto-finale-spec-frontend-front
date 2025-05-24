@@ -1,9 +1,11 @@
 import { useState, useMemo, useCallback, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { debounce } from "../utils/debounce";
+
 import FacultyRow from "../components/faculty/FacultyRow";
 import SearchBar from "../components/filters/SearchBar";
-import FilterControls from "../components/filters/FilterControls";
-import { debounce } from "../utils/debounce";
+import CategoryFilter from "../components/filters/CategoryFilter";
+import SortButton from "../components/filters/SortButton";
 import "./FacultiesList.css";
 
 export default function FacultiesList() {
@@ -39,7 +41,7 @@ export default function FacultiesList() {
   }, [faculties, searchTerm, selectedCategory, sortAsc]);
 
   return (
-    <main className="container-fluid p-0">
+    <main className="container-fluid p-0" style={{ paddingTop: "64px" }}>
       {/* HERO SECTION */}
       <section
         className="hero-section mb-5"
@@ -64,36 +66,16 @@ export default function FacultiesList() {
               <tr>
                 <th style={{ textAlign: "left", width: "30%" }}>
                   <div className="search-sort-row">
-                    <button
-                      className={`sort-btn sort-btn--small${
-                        sortAsc ? " active" : ""
-                      }`}
-                      onClick={() => setSortAsc((asc) => !asc)}
-                      aria-label="Toggle alphabetical order"
-                    >
-                      {sortAsc ? "A→Z" : "Z→A"}
-                    </button>
-                    <input
-                      className="search-bar-input"
-                      placeholder="Search faculties..."
-                      value={searchTerm}
-                      onChange={(e) => debouncedSearch(e.target.value)}
-                    />
+                    <SortButton asc={sortAsc} onToggle={() => setSortAsc((asc) => !asc)} />
+                    <SearchBar value={searchTerm} onChange={debouncedSearch} />
                   </div>
                 </th>
                 <th style={{ textAlign: "left", width: "25%" }}>
-                  <select
-                    className="category-dropdown"
+                  <CategoryFilter
+                    categories={categories}
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                  >
-                    <option value="">All Categories</option>
-                    {categories.map((cat) => (
-                      <option key={cat} value={cat}>
-                        {cat}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setSelectedCategory}
+                  />
                 </th>
                 <th style={{ textAlign: "right" }}></th>
               </tr>

@@ -1,4 +1,4 @@
-.search-bar-input {
+.category-dropdown {
   width: 100%;
   font-family: "Georgia", serif;
   font-size: 1.05rem;
@@ -11,12 +11,6 @@
   vertical-align: middle;
 }
 
-.search-bar-input:focus {
+.category-dropdown:focus {
   background: #fafafa;
-}
-
-.search-sort-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }

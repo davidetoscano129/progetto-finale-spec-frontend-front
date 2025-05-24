@@ -1,10 +1,12 @@
 import { useState, useMemo, useCallback, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../context/FavoritesContext";
+import { debounce } from "../utils/debounce";
+
 import FacultyRow from "../components/faculty/FacultyRow";
 import SearchBar from "../components/filters/SearchBar";
-import FilterControls from "../components/filters/FilterControls";
-import { debounce } from "../utils/debounce";
+import CategoryFilter from "../components/filters/CategoryFilter";
+import SortButton from "../components/filters/SortButton";
 import "./FacultiesList.css";
 
 export default function FavoritesFaculties() {
@@ -81,36 +83,19 @@ export default function FavoritesFaculties() {
                 <tr>
                   <th style={{ textAlign: "left", width: "30%" }}>
                     <div className="search-sort-row">
-                      <button
-                        className={`sort-btn sort-btn--small${
-                          sortAsc ? " active" : ""
-                        }`}
-                        onClick={() => setSortAsc((asc) => !asc)}
-                        aria-label="Toggle alphabetical order"
-                      >
-                        {sortAsc ? "A→Z" : "Z→A"}
-                      </button>
-                      <input
-                        className="search-bar-input"
-                        placeholder="Search faculties..."
+                      <SortButton asc={sortAsc} onToggle={() => setSortAsc((asc) => !asc)} />
+                      <SearchBar
                         value={searchTerm}
-                        onChange={(e) => debouncedSearch(e.target.value)}
+                        onChange={debouncedSearch}
                       />
                     </div>
                   </th>
                   <th style={{ textAlign: "left", width: "25%" }}>
-                    <select
-                      className="category-dropdown"
+                    <CategoryFilter
+                      categories={categories}
                       value={selectedCategory}
-                      onChange={(e) => setSelectedCategory(e.target.value)}
-                    >
-                      <option value="">All Categories</option>
-                      {categories.map((category) => (
-                        <option key={category} value={category}>
-                          {category}
-                        </option>
-                      ))}
-                    </select>
+                      onChange={setSelectedCategory}
+                    />
                   </th>
                   <th style={{ textAlign: "right" }}></th>
                 </tr>

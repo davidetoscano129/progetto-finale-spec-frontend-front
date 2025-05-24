@@ -1,13 +1,10 @@
 .custom-navbar {
-  background: #fff;
-  border-bottom: 1.5px solid #e5e7eb;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  min-height: 64px;
-  box-shadow: 0 2px 8px 0 rgba(23, 35, 61, 0.03);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
+  background: #fff;
 }
 
 .custom-navbar-brand {
