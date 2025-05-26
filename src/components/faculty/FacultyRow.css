@@ -1,70 +1,26 @@
-.faculty-table {
-  border-collapse: collapse;
-  width: 100%;
-  background: none;
+.faculty-row {
+  transition: background-color 0.2s;
+  cursor: pointer;
 }
 
-.faculty-table th,
-.faculty-table td {
-  border-bottom: 1.5px solid #222;
-  padding: 1rem 0.5rem;
-  background: transparent;
-  font-size: 1.1rem;
-}
-
-.faculty-table th {
-  font-size: 0.9rem;
-  color: #666;
-  font-weight: 600;
-  background: none;
-  border-bottom: 2px solid #222;
-}
-
-/* .faculty-row {
-} */
-
-.faculty-row td {
-  padding: 0.7rem 0.5rem;
-  vertical-align: middle;
-}
-
-.faculty-row:last-child td {
-  border-bottom: none;
+.faculty-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .faculty-title {
-  font-size: 1.15rem;
-  color: #222;
   font-family: "Georgia", serif;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.faculty-badge {
-  font-size: 1.15rem;
-  color: #222;
-  font-family: "Georgia", serif;
-  font-weight: 500;
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  letter-spacing: 0;
-  box-shadow: none;
+  color: #333;
 }
 
 .faculty-category-col {
-  width: 15%;
-  min-width: 100px;
-  white-space: nowrap;
+  font-family: "Georgia", serif;
 }
 
-.faculty-row td:nth-child(2) {
-  width: 25%;
-  min-width: 180px;
+.faculty-badge {
+  font-size: 0.9rem;
+  color: #555;
 }
 
-.clickable-row:hover,
-.clickable-row:focus {
-  background: #f4f6fa;
-  transition: background 0.15s;
+.faculty-actions-col {
+  text-align: right;
 }

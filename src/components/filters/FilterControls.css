@@ -1,0 +1,30 @@
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Georgia", serif;
+}
+
+.filter-category-select {
+  width: 100%;
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.filter-sort-btn {
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 576px) {
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-category-select {
+    margin-bottom: 0.5rem;
+  }
+}

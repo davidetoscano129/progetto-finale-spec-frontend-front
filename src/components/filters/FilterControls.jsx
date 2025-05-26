@@ -11,25 +11,27 @@ const FilterControls = memo(
   }) => {
     return (
       <div className="filter-controls">
-        <select
-          className="filter-category-select"
-          id="categoryFilter"
-          value={selectedCategory}
-          onChange={(e) => onCategoryChange(e.target.value)}
-          aria-label="Filter faculties by category"
-        >
-          <option value="">All Categories</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+        <div className="form-group">
+          <select
+            className="form-select filter-category-select"
+            id="categoryFilter"
+            value={selectedCategory}
+            onChange={(e) => onCategoryChange(e.target.value)}
+            aria-label="Filter faculties by category"
+          >
+            <option value="">All Categories</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
         <button
-          className="filter-sort-btn"
+          className="btn btn-outline-secondary filter-sort-btn"
           onClick={() => onSortChange(!sortAsc)}
           type="button"
-          aria-label="Toggle alphabetical order"
+          aria-label={sortAsc ? "Sort Z to A" : "Sort A to Z"}
         >
           {sortAsc ? "A → Z" : "Z → A"}
         </button>
@@ -37,5 +39,7 @@ const FilterControls = memo(
     );
   }
 );
+
+FilterControls.displayName = 'FilterControls';
 
 export default FilterControls;

@@ -1,90 +1,92 @@
-.faculties-hero-section {
-  position: relative;
-  background-image: url("brightspot.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 440px;
-  color: #fff;
+/* Global styles for the faculties list page */
+h1 {
+  font-family: "Georgia", serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Filters layout */
+.filters-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-sort-container {
+  display: flex;
   align-items: center;
-  text-align: center;
+  gap: 0.5rem;
 }
 
-.faculties-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 35, 61, 0.7);
-  z-index: 1;
+.sort-button-container {
+  flex-shrink: 0;
 }
 
-.faculties-hero-content {
-  position: relative;
-  z-index: 2;
+.faculty-search-container {
+  flex-grow: 1;
+}
+
+.category-filter-container {
   width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
-.faculties-cards-wrapper {
-  padding: 0;
-  margin: 0;
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
+/* Table styles */
+.table {
+  margin-bottom: 0;
+  font-family: "Georgia", serif;
 }
 
-/* Mantieni il bordo della tabella */
-.faculty-table th,
-.faculty-table td {
-  border-bottom: 1.5px solid #222;
+/* Make sure table rows have proper hover effect */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
 }
 
-.favorites-hero-section {
-  background-image: url("FavoritesFacultiesImg.jpg");
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  position: relative;
-  margin-bottom: 3rem;
+/* Header styling */
+.table thead th {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem 0.5rem;
+  font-weight: normal;
+  font-family: "Georgia", serif;
+  color: #495057;
 }
 
-.favorites-hero-section h1,
-.favorites-hero-section p {
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(23, 35, 61, 0.25);
+/* Card styles */
+.card {
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  transition: box-shadow 0.3s ease;
 }
 
-.hero-section {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 440px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.card p {
+  font-family: "Georgia", serif;
+  color: #555;
+  line-height: 1.6;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 35, 61, 0.7);
-  z-index: 1;
-}
+/* Add responsive styles */
+@media (max-width: 767px) {
+  .filters-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding-top: 4.5rem;
-  padding-bottom: 3rem;
+  .filter-group {
+    width: 100%;
+  }
+  
+  .table thead th {
+    display: table-cell;
+    padding: 0.5rem;
+  }
+  
+  .table tbody td {
+    padding: 1rem 0.5rem;
+  }
 }

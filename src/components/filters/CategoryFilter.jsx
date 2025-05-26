@@ -3,7 +3,7 @@ import "./CategoryFilter.css";
 export default function CategoryFilter({ categories, value, onChange }) {
   return (
     <select
-      className="category-dropdown"
+      className="form-select category-dropdown"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       aria-label="Filter by category"

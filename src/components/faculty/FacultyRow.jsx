@@ -7,7 +7,6 @@ export default function FacultyRow({ faculty, onFavorite }) {
 
   return (
     <tr
-      className="faculty-row clickable-row"
       tabIndex={0}
       onClick={() => navigate(`/faculty/${faculty.id}`)}
       onKeyDown={(e) => {
@@ -15,17 +14,16 @@ export default function FacultyRow({ faculty, onFavorite }) {
           navigate(`/faculty/${faculty.id}`);
         }
       }}
-      style={{ cursor: "pointer" }}
     >
       <td>
-        <span className="faculty-title">
+        <span>
           <strong>{faculty.title}</strong>
         </span>
       </td>
-      <td className="faculty-category-col">
-        <span className="faculty-badge">{faculty.category}</span>
+      <td>
+        <span>{faculty.category}</span>
       </td>
-      <td style={{ textAlign: "right" }}>
+      <td>
         <FavoriteButton
           faculty={faculty}
           onClick={(e) => {
