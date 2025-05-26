@@ -1,0 +1,21 @@
+.footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  padding: 0.5rem 0;
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.footer-text {
+  color: #777;
+}
+
+.heart {
+  color: #e25555;
+  display: inline-block;
+  margin: 0 0.15rem;
+  font-size: 0.9rem;
+}

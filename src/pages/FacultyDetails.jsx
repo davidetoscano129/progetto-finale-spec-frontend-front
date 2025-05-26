@@ -32,7 +32,7 @@ export default function FacultyDetails() {
   };
 
   return (
-    <main className="container py-5">
+    <main className="container py-5 pb-5">
       {/* Add ComparatorButton always visible at the top */}
       <div className="row mb-4">
         <div className="col-12">

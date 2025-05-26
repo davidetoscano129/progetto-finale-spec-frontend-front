@@ -87,7 +87,7 @@ export default function FacultiesList() {
   }, [faculties, searchTerm, selectedCategory, sortAsc]);
 
   return (
-    <main className="container py-5">
+    <main className="container py-5 pb-5">
       <section className="row mb-4">
         <div className="col-12">
           <div className="card shadow-sm p-4">
