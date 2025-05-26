@@ -1,25 +1,26 @@
-.faculty-details-main {
-  background: #f8fafc;
-  min-height: 100vh;
+.comparison-close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
 }
 
-.faculty-details-card {
-  border-radius: 1.25rem;
-  overflow: hidden;
+.comparison-close-btn:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.1);
 }
 
-.faculty-details-card .card-header {
-  border-bottom: 1px solid #e5e7eb;
-  background: #f4f6fa !important;
-}
-
-.faculty-details-card .card-footer {
-  background: #f8fafc;
-  border-top: 1px solid #e5e7eb;
-}
-
-@media (max-width: 767px) {
-  .faculty-details-card {
-    margin-bottom: 1.5rem;
-  }
+.comparison-close-btn:active {
+  transform: scale(0.95);
 }

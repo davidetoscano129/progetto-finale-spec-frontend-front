@@ -7,19 +7,11 @@ export default function FacultyInfo({ faculty }) {
   }
 
   return (
-    <div className="card-body">
+    <div>
       {/* Header with Title and Favorite Button */}
-      <div className="d-flex justify-content-between align-items-start mb-3">
-        <h2 className="card-title h2">{faculty.title} </h2>
+      <div className="d-flex align-items-center justify-content-between mb-2">
+        <h3 className="mb-0">{faculty.title}</h3>
         <FavoriteButton faculty={faculty} />
-      </div>
-
-      {/* Category Badge */}
-      <div className="mb-4">
-        <span className="badge bg-primary">
-          <i className="bi bi-bookmark-fill me-2"></i>
-          {faculty.category}
-        </span>
       </div>
 
       {/* Faculty Details */}
@@ -29,16 +21,14 @@ export default function FacultyInfo({ faculty }) {
             <i className="bi bi-info-circle me-2"></i>
             <strong>Description</strong>
           </div>
-          <div className="text-break faculty-info-detail-box">
-            {faculty.details.longDescription}
-          </div>
+          <div className="description-container">{faculty.details.longDescription}</div>
         </li>
         <li className="list-group-item">
           <div className="d-flex align-items-center mb-1">
-            <i className="bi bi-journal-text me-2"></i>
+            <i className="bi bi-list-ul me-2"></i>
             <strong>Main Subjects</strong>
           </div>
-          <div className="text-break faculty-info-detail-box">
+          <div>
             {Array.isArray(faculty.details.mainSubjects)
               ? faculty.details.mainSubjects.join(", ")
               : faculty.details.mainSubjects}
@@ -49,75 +39,62 @@ export default function FacultyInfo({ faculty }) {
             <i className="bi bi-briefcase me-2"></i>
             <strong>Career Opportunities</strong>
           </div>
-          <div className="text-break faculty-info-detail-box">
+          <div>
             {Array.isArray(faculty.details.careerOpportunities)
               ? faculty.details.careerOpportunities.join(", ")
               : faculty.details.careerOpportunities}
           </div>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
-            <i className="bi bi-pencil-square me-2"></i>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
+            <i className="bi bi-mortarboard me-2"></i>
+            <strong>Category</strong>
+          </span>
+          <span>{faculty.category}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
+            <i className="bi bi-clipboard-check me-2"></i>
             <strong>Admission Test</strong>
           </span>
-          <span
-            className={`badge ${
-              faculty.details.admissionTest ? "bg-success" : "bg-danger"
-            }`}
-          >
-            {faculty.details.admissionTest ? "Required" : "Not Required"}
+          <span>
+            {faculty.details.admissionTest ? "Required" : "Not required"}
           </span>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
             <i className="bi bi-clock me-2"></i>
-            Duration
+            <strong>Duration</strong>
           </span>
-          <span className="badge bg-secondary">
-            {faculty.details.duration} years
-          </span>
+          <span>{faculty.details.duration} years</span>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
             <i className="bi bi-award me-2"></i>
-            Credits
+            <strong>Credits</strong>
           </span>
-          <span className="badge bg-secondary">
-            {faculty.details.credits} CFU
-          </span>
+          <span>{faculty.details.credits} CFU</span>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
             <i className="bi bi-people me-2"></i>
-            Max Students
+            <strong>Max Students</strong>
           </span>
-          <span className="badge bg-secondary">
-            {faculty.details.maxStudents || "No limit"}
-          </span>
+          <span>{faculty.details.maxStudents || "No limit"}</span>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
-            <i className="bi bi-bar-chart-line me-2"></i>
-            Employment Rate
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
+            <i className="bi bi-graph-up me-2"></i>
+            <strong>Employment Rate</strong>
           </span>
-          <span className="badge bg-info text-dark">
-            {faculty.details.employmentRate}%
-          </span>
+          <span>{faculty.details.employmentRate}%</span>
         </li>
-
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <span>
+        <li className="list-group-item d-flex justify-content-between">
+          <span className="d-flex align-items-center">
             <i className="bi bi-flask me-2"></i>
-            Laboratory Hours
+            <strong>Laboratory Hours</strong>
           </span>
-          <span className="badge bg-secondary">
-            {faculty.details.laboratoryHours}
-          </span>
+          <span>{faculty.details.laboratoryHours}</span>
         </li>
       </ul>
     </div>

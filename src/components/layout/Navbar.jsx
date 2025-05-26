@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar custom-navbar">
+    <nav className="navbar custom-navbar fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
         <span className="navbar-brand mb-0 fw-bold custom-navbar-brand">
           Faculty Comparator

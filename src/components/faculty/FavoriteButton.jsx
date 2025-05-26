@@ -14,19 +14,16 @@ const FavoriteButton = ({ faculty, onClick }) => {
   return (
     <button
       type="button"
-      className={`favorite-btn btn btn-${isFav ? "danger" : "outline-danger"} btn-sm`}
+      className={`favorite-btn ${isFav ? 'favorite-btn-active' : ''}`}
       onClick={(e) => {
         handleClick(e);
         toggleFavorite(faculty);
       }}
-      title={isFav ? "Remove from favorites" : "Add to favorites"}
-      aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      title={isFav ? "Remove from saved" : "Save this faculty"}
+      aria-label={isFav ? "Remove from saved" : "Save this faculty"}
       aria-pressed={isFav}
     >
-      <i 
-        className={`bi bi-heart${isFav ? "-fill" : ""}`}
-        aria-hidden="true"
-      />
+      <i className={`bi ${isFav ? 'bi-bookmark-fill' : 'bi-bookmark'}`}></i>
     </button>
   );
 };

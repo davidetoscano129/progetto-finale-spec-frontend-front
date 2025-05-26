@@ -1,45 +1,44 @@
 .favorite-btn {
-  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
   width: 2.2rem;
   height: 2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px 0 rgba(23, 35, 61, 0.08);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0;
-  font-size: 1.15rem;
-}
-
-.favorite-btn .bi-heart,
-.favorite-btn .bi-heart-fill {
-  font-size: 1.25rem;
-  vertical-align: middle;
-}
-
-.favorite-btn:focus {
-  outline: 2px solid #4fc3f7;
-  outline-offset: 2px;
-}
-
-/* FilterControls.css */
-.filter-btn, .sort-btn {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #e5e7eb;
-  color: #222;
-  font-family: "Georgia", serif;
-  font-size: 1rem;
-  padding: 0.4rem 0.8rem;
-  margin-right: 0.3rem;
-  border-radius: 0;
-  transition: border-color 0.2s, color 0.2s;
   cursor: pointer;
 }
 
-.filter-btn.active, .sort-btn.active,
-.filter-btn:hover, .sort-btn:hover {
-  border-bottom: 2px solid #b91c1c;
-  color: #b91c1c;
-  background: #fafafa;
+.favorite-btn i {
+  font-size: 1.25rem;
+  vertical-align: middle;
+  transition: color 0.2s ease-in-out;
+  color: #6c757d;
+}
+
+.favorite-btn:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.favorite-btn:active {
+  transform: scale(0.95);
+}
+
+.favorite-btn:focus {
+  outline: 2px solid #adb5bd;
+  outline-offset: 2px;
+}
+
+.favorite-btn-active {
+  background-color: #f2f2f2;
+  border-color: #ced4da;
+}
+
+.favorite-btn-active i {
+  color: #212529;
 }

@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import FacultyInfo from "../components/faculty/FacultyInfo";
+import ComparatorButton from "../components/faculty/ComparatorButton";
 import "./FacultyDetails.css";
 
 export default function FacultyDetails() {
@@ -10,80 +11,69 @@ export default function FacultyDetails() {
   const [compareWith, setCompareWith] = useState(null);
 
   const faculty = faculties.find((f) => f.id === parseInt(id));
-  const otherFaculties = faculties.filter((f) => f.id !== parseInt(id));
 
   if (!faculty) {
     return (
-      <div className="container py-5 text-center">
-        <h2 className="mb-4">Faculty not found</h2>
-        <p className="text-muted mb-4">
-          The faculty you're looking for doesn't exist or has been removed.
-        </p>
-        <Link to="/" className="btn btn-primary">
-          Back to Faculty List
-        </Link>
+      <div className="container py-5">
+        <div className="alert alert-warning mt-5">
+          <h2>Faculty not found</h2>
+          <p>
+            The faculty you're looking for doesn't exist or has been removed.
+          </p>
+          <Link to="/">Back to Faculty List</Link>
+        </div>
       </div>
     );
   }
 
-  return (
-    <main className="container py-5 faculty-details-main">
-      <section className="row g-4">
-        {/* Main Faculty Card */}
-        <article className={compareWith ? "col-md-6" : "col-12"}>
-          <div className="card shadow-sm faculty-details-card">
-            <div className="card-header bg-light">
-              <h2 className="h5 mb-0">Faculty Details</h2>
-            </div>
-            <FacultyInfo faculty={faculty} />
-            {!compareWith && (
-              <footer className="card-footer">
-                <label className="form-label">
-                  Compare with another faculty
-                </label>
-                <select
-                  className="form-select"
-                  onChange={(e) =>
-                    setCompareWith(
-                      faculties.find((f) => f.id === parseInt(e.target.value))
-                    )
-                  }
-                  aria-label="Select faculty to compare"
-                >
-                  <option value="">Select a faculty to compare...</option>
-                  {otherFaculties.map((f) => (
-                    <option key={f.id} value={f.id}>
-                      {f.title}
-                    </option>
-                  ))}
-                </select>
-                <small className="text-muted">
-                  Choose another faculty to see them side by side
-                </small>
-              </footer>
-            )}
-          </div>
-        </article>
+  // Function to handle the selection of a new faculty to compare with
+  const handleCompareChange = (newFaculty) => {
+    setCompareWith(newFaculty);
+  };
 
-        {/* Comparison Faculty Card */}
-        {compareWith && (
-          <article className="col-md-6">
-            <div className="card shadow-sm faculty-details-card">
-              <div className="card-header bg-light">
-                <h2 className="h5 mb-0">Comparison Faculty</h2>
+  return (
+    <main className="container py-5">
+      {/* Add ComparatorButton always visible at the top */}
+      <div className="row mb-4">
+        <div className="col-12">
+          <div className="card shadow-sm p-3">
+            <ComparatorButton
+              faculty={faculty}
+              onCompare={handleCompareChange}
+              compareWith={compareWith}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Faculties section */}
+      <section className="row justify-content-center">
+        {compareWith ? (
+          /* Layout with two faculties side by side */
+          <>
+            <div className="col-lg-6 mb-4">
+              <div className="card shadow-sm p-4 h-100">
+                <FacultyInfo faculty={faculty} />
               </div>
-              <FacultyInfo faculty={compareWith} />
-              <footer className="card-footer">
-                <button
-                  className="btn btn-outline-danger w-100"
-                  onClick={() => setCompareWith(null)}
-                >
-                  <i className="bi bi-x-circle me-2"></i>
-                  Remove Comparison
-                </button>
-              </footer>
             </div>
-          </article>
+            <div className="col-lg-6 mb-4">
+              <div className="card shadow-sm p-4 h-100 position-relative">
+                <button
+                  className="btn-close comparison-close-btn"
+                  aria-label="Close comparison"
+                  onClick={() => setCompareWith(null)}
+                />
+                <FacultyInfo faculty={compareWith} />
+              </div>
+            </div>
+          </>
+        ) : (
+          /* Layout with a single faculty at full width */
+          <div className="col-12 mb-4">
+            <div className="card shadow-sm p-4 h-100">
+              <FacultyInfo faculty={faculty} />
+            </div>
+          </div>
         )}
       </section>
     </main>
