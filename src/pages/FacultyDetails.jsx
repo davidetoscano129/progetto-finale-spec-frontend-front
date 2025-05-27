@@ -1,9 +1,11 @@
-import { useParams, Link } from "react-router-dom";
 import { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
+import PageContainer from "../layout/PageContainer";
 import FacultyInfo from "../components/faculty/FacultyInfo";
 import ComparatorButton from "../components/faculty/ComparatorButton";
-import "./FacultyDetails.css";
+import EmptyState from "../components/ui/EmptyState";
+import "../styles/FacultyDetails.css";
 
 export default function FacultyDetails() {
   const { id } = useParams();
@@ -14,42 +16,34 @@ export default function FacultyDetails() {
 
   if (!faculty) {
     return (
-      <div className="container py-5">
-        <div className="alert alert-warning mt-5">
-          <h2>Faculty not found</h2>
-          <p>
-            The faculty you're looking for doesn't exist or has been removed.
-          </p>
-          <Link to="/">Back to Faculty List</Link>
-        </div>
-      </div>
+      <PageContainer>
+        <EmptyState
+          icon="exclamation-triangle"
+          title="Faculty not found"
+          message="The faculty you're looking for doesn't exist or has been removed."
+          actionLink="/"
+          actionText="Back to Faculty List"
+          iconClass="text-warning"
+        />
+      </PageContainer>
     );
   }
 
-  // Function to handle the selection of a new faculty to compare with
-  const handleCompareChange = (newFaculty) => {
-    setCompareWith(newFaculty);
-  };
-
   return (
-    <main className="container py-5 pb-5">
-      {/* Add ComparatorButton always visible at the top */}
-      <div className="row mb-4">
+    <PageContainer>
+      {/* Faculty comparison selector */}
+      <section className="row mb-4">
         <div className="col-12">
           <div className="card shadow-sm p-3">
-            <ComparatorButton
-              faculty={faculty}
-              onCompare={handleCompareChange}
-              compareWith={compareWith}
-            />
+            <ComparatorButton faculty={faculty} onCompare={setCompareWith} />
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Faculties section */}
       <section className="row justify-content-center">
         {compareWith ? (
-          /* Layout with two faculties side by side */
+          /* Two faculties side by side */
           <>
             <div className="col-lg-6 mb-4">
               <div className="card shadow-sm p-4 h-100">
@@ -68,7 +62,7 @@ export default function FacultyDetails() {
             </div>
           </>
         ) : (
-          /* Layout with a single faculty at full width */
+          /* Single faculty at full width */
           <div className="col-12 mb-4">
             <div className="card shadow-sm p-4 h-100">
               <FacultyInfo faculty={faculty} />
@@ -76,6 +70,6 @@ export default function FacultyDetails() {
           </div>
         )}
       </section>
-    </main>
+    </PageContainer>
   );
 }

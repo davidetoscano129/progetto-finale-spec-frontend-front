@@ -1,5 +1,5 @@
 import { memo } from "react";
-import "./FilterControls.css";
+import "../../styles/FilterControls.css";
 
 const FilterControls = memo(
   ({
@@ -40,6 +40,6 @@ const FilterControls = memo(
   }
 );
 
-FilterControls.displayName = 'FilterControls';
+FilterControls.displayName = "FilterControls";
 
 export default FilterControls;

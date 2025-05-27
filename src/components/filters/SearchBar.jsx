@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import "./SearchBar.css";
+import "../../styles/SearchBar.css";
 
 export default function SearchBar({
   value,

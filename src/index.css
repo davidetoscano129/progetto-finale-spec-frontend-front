@@ -5,13 +5,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Aggiungi qui lo sfondo desiderato */
-  background-color: #e3e2d6; /* Esempio di colore di sfondo */
-  /* Oppure usa un'immagine di sfondo */
-  /* background-image: url('/path/to/background.jpg'); */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* background-attachment: fixed; */
+  background-color: #e3e2d6;
 }
 
 #root {

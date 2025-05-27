@@ -1,5 +1,5 @@
 import FavoriteButton from "./FavoriteButton";
-import "./FacultyInfo.css";
+import "../../styles/FacultyInfo.css";
 
 export default function FacultyInfo({ faculty }) {
   if (!faculty || !faculty.details) {
@@ -21,7 +21,9 @@ export default function FacultyInfo({ faculty }) {
             <i className="bi bi-info-circle me-2"></i>
             <strong>Description</strong>
           </div>
-          <div className="description-container">{faculty.details.longDescription}</div>
+          <div className="description-container">
+            {faculty.details.longDescription}
+          </div>
         </li>
         <li className="list-group-item">
           <div className="d-flex align-items-center mb-1">

@@ -1,0 +1,58 @@
+.empty-state {
+  padding: 4rem 2rem !important;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.empty-state .icon-container {
+  margin-bottom: 1.5rem;
+}
+
+.empty-state-icon {
+  font-size: 5rem;
+  color: #8b0000; /* Cambiato al colore bordeaux per coerenza */
+}
+
+.empty-state-icon.text-danger {
+  color: #8b0000;
+}
+
+.empty-state-icon.bi-bookmark {
+  color: #8b0000; /* Cambiato da bi-heart a bi-bookmark */
+  opacity: 0.8;
+}
+
+.empty-state-title {
+  font-family: "Georgia", serif;
+  color: #333;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state-message {
+  font-family: "Georgia", serif;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty-state-action {
+  margin-top: 0.5rem;
+}
+
+.empty-state-button {
+  background-color: #8b0000;  /* Cambiato da blu a bordeaux */
+  border-color: #8b0000;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+.empty-state-button:hover,
+.empty-state-button:focus {
+  background-color: #a52a2a;  /* Colore hover aggiornato */
+  border-color: #8b0000;
+}

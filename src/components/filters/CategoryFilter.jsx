@@ -1,4 +1,4 @@
-import "./CategoryFilter.css";
+import "../../styles/CategoryFilter.css";
 
 export default function CategoryFilter({ categories, value, onChange }) {
   return (

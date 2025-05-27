@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect, useRef, useMemo } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import CategoryFilter from "../filters/CategoryFilter";
-import "./ComparatorButton.css";
+import "../../styles/ComparatorButton.css";
 
 const ComparatorButton = ({ faculty, onCompare }) => {
   const { faculties } = useContext(GlobalContext);
@@ -26,12 +26,12 @@ const ComparatorButton = ({ faculty, onCompare }) => {
   // Filter faculties based on search criteria
   const filteredFaculties = useMemo(() => {
     let result = otherFaculties;
-    
+
     // Filter by category if selected
     if (selectedCategory) {
       result = result.filter((f) => f.category === selectedCategory);
     }
-    
+
     // Filter by search term if present
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
@@ -41,7 +41,7 @@ const ComparatorButton = ({ faculty, onCompare }) => {
           f.category.toLowerCase().includes(term)
       );
     }
-    
+
     return result;
   }, [otherFaculties, searchTerm, selectedCategory]);
 
@@ -71,10 +71,8 @@ const ComparatorButton = ({ faculty, onCompare }) => {
 
   return (
     <footer className="mt-4">
-      <label className="form-label mb-2">
-        Compare with another faculty
-      </label>
-      
+      <label className="form-label mb-2">Compare with another faculty</label>
+
       <div className="filters-row">
         <div className="faculty-autocomplete-container" ref={dropdownRef}>
           <input
@@ -91,12 +89,12 @@ const ComparatorButton = ({ faculty, onCompare }) => {
             onFocus={() => setIsDropdownOpen(true)}
             aria-label="Search faculties"
           />
-          
+
           {isDropdownOpen && filteredFaculties.length > 0 && (
             <ul className="faculty-results-dropdown">
               {filteredFaculties.map((f) => (
-                <li 
-                  key={f.id} 
+                <li
+                  key={f.id}
                   onClick={() => handleSelectFaculty(f)}
                   className="faculty-result-item"
                 >
@@ -106,23 +104,23 @@ const ComparatorButton = ({ faculty, onCompare }) => {
               ))}
             </ul>
           )}
-          
+
           {isDropdownOpen && searchTerm && filteredFaculties.length === 0 && (
             <div className="no-results-message">
               No faculties match your search
             </div>
           )}
         </div>
-        
+
         <div className="category-filter-container">
-          <CategoryFilter 
-            categories={categories} 
-            value={selectedCategory} 
-            onChange={setSelectedCategory} 
+          <CategoryFilter
+            categories={categories}
+            value={selectedCategory}
+            onChange={setSelectedCategory}
           />
         </div>
       </div>
-      
+
       <small className="text-muted mt-2">
         Type to search, then select a faculty to compare side by side
       </small>

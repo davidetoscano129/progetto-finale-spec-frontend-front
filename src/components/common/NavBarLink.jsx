@@ -5,7 +5,10 @@ export default function NavBarLink({ to, children }) {
 
   return (
     <li className="nav-item">
-      <RouterNavLink to={to} className={({ isActive }) => getNavLinkClass(isActive)}>
+      <RouterNavLink
+        to={to}
+        className={({ isActive }) => getNavLinkClass(isActive)}
+      >
         {children}
       </RouterNavLink>
     </li>

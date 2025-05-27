@@ -1,5 +1,5 @@
-import NavBarLink from "./NavLink";
-import "./Navbar.css";
+import NavBarLink from "./NavBarLink";
+import "../../styles/Navbar.css";
 
 export default function Navbar() {
   return (
