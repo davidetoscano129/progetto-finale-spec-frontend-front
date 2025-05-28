@@ -1,0 +1,157 @@
+[
+  {
+    "id": 1,
+    "title": "Computer Engineering",
+    "category": "STEM",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": true,
+      "maxStudents": 250,
+      "mainSubjects": ["Programming", "Mathematical Analysis", "Physics", "Databases"],
+      "careerOpportunities": ["Software Developer", "System Analyst", "DevOps Engineer"],
+      "employmentRate": 94,
+      "laboratoryHours": 20,
+      "longDescription": "A degree program that trains professionals in the field of computer science and programming. Students will acquire skills in programming, data analysis, software development, and management of complex IT systems. The course prepares professionals highly sought after by the job market."
+    } 
+  },
+  {
+    "id": 2,
+    "title": "Medicine and Surgery",
+    "category": "Medicine",
+    "details": {
+      "duration": 6,
+      "credits": 360,
+      "admissionTest": true,
+      "maxStudents": 100,
+      "mainSubjects": ["Anatomy", "Physiology", "Pathology", "Pharmacology"],
+      "careerOpportunities": ["Hospital Doctor", "Surgeon", "Medical Researcher"],
+      "employmentRate": 98,
+      "laboratoryHours": 30,
+      "longDescription": "A comprehensive training path to become a doctor, with a strong focus on clinical practice. The course provides in-depth preparation in medical-surgical fields, combining theory and practice through internships in hospital facilities. Students acquire complete skills in diagnostics, therapy, and surgery."
+    }
+  },
+  {
+    "id": 3,
+    "title": "Business Administration",
+    "category": "Economics",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": false,
+      "mainSubjects": ["Marketing", "Accounting", "Finance", "Management"],
+      "careerOpportunities": ["Business Analyst", "Financial Manager", "Marketing Manager"],
+      "employmentRate": 88,
+      "laboratoryHours": 10,
+      "longDescription": "A training path that provides management and financial skills for the business world. Students will develop skills in economics, management, and finance, preparing to take on key roles in modern organizations. The course combines economic theory and practical management applications."
+    }
+  },
+  {
+    "id": 4,
+    "title": "Psychology",
+    "category": "Human Sciences",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": true,
+      "maxStudents": 300,
+      "mainSubjects": ["General Psychology", "Neuropsychology", "Social Psychology", "Psychometrics"],
+      "careerOpportunities": ["Clinical Psychologist", "Psychotherapist", "HR Manager"],
+      "employmentRate": 85,
+      "laboratoryHours": 15,
+      "longDescription": "A course that trains experts in understanding human behavior. Students will acquire theoretical and practical skills in psychology, developing analytical and intervention skills in various contexts. The path includes internships and practical experiences in clinical and social settings."
+    }
+  },
+  {
+    "id": 5,
+    "title": "Architecture",
+    "category": "Design",
+    "details": {
+      "duration": 5,
+      "credits": 300,
+      "admissionTest": true,
+      "maxStudents": 150,
+      "mainSubjects": ["Design", "History of Architecture", "Urban Planning", "Design"],
+      "careerOpportunities": ["Architect", "Urban Planner", "Interior Designer"],
+      "employmentRate": 82,
+      "laboratoryHours": 25,
+      "longDescription": "A course that combines creativity and technical skills in the field of design. Students will develop design skills, technical knowledge, and aesthetic sensitivity through practical workshops and the study of architectural history. The path trains professionals capable of designing innovative spaces and structures."
+    }
+  },
+  {
+    "id": 6,
+    "title": "Law",
+    "category": "Legal Sciences",
+    "details": {
+      "duration": 5,
+      "credits": 300,
+      "admissionTest": false,
+      "mainSubjects": ["Private Law", "Public Law", "Criminal Law", "Commercial Law"],
+      "careerOpportunities": ["Lawyer", "Judge", "Notary"],
+      "employmentRate": 80,
+      "laboratoryHours": 5,
+      "longDescription": "Comprehensive training in the field of law and jurisprudence. The course offers in-depth preparation in all branches of law, training professionals capable of operating in the legal field. Students will develop analytical and interpretative skills of the legal system."
+    }
+  },
+  {
+    "id": 7,
+    "title": "Physics",
+    "category": "STEM",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": false,
+      "mainSubjects": ["Quantum Mechanics", "Thermodynamics", "Electromagnetism", "Nuclear Physics"],
+      "careerOpportunities": ["Researcher", "Data Scientist", "Nuclear Physicist"],
+      "employmentRate": 92,
+      "laboratoryHours": 25,
+      "longDescription": "In-depth study of the fundamental laws of the universe. The course combines advanced physical theory with practical applications through laboratory experiments. Students will develop advanced mathematical and analytical skills, preparing for careers in research and industry."
+    }
+  },
+  {
+    "id": 8,
+    "title": "Foreign Languages and Literatures",
+    "category": "Literature",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": false,
+      "mainSubjects": ["English Language", "Spanish Language", "Comparative Literature", "Linguistics"],
+      "careerOpportunities": ["Translator", "Interpreter", "Teacher"],
+      "employmentRate": 75,
+      "laboratoryHours": 15,
+      "longDescription": "A path for experts in languages and international communication. Students will develop advanced language skills in several languages, along with a deep understanding of the associated cultures. The course prepares for careers in international fields, translation, and teaching."
+    }
+  },
+  {
+    "id": 9,
+    "title": "Biotechnologies",
+    "category": "STEM",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": true,
+      "maxStudents": 200,
+      "mainSubjects": ["Molecular Biology", "Genetics", "Microbiology", "Biochemistry"],
+      "careerOpportunities": ["Biotech Researcher", "Quality Control", "Product Developer"],
+      "employmentRate": 88,
+      "laboratoryHours": 30,
+      "longDescription": "Study of technological applications in the biological field. The course provides advanced skills in molecular biology and biotechnologies, with a strong emphasis on laboratory practice. Students prepare for careers in biotechnological research and the pharmaceutical industry."
+    }
+  },
+  {
+    "id": 10,
+    "title": "Communication Sciences",
+    "category": "Human Sciences",
+    "details": {
+      "duration": 3,
+      "credits": 180,
+      "admissionTest": false,
+      "mainSubjects": ["Communication Theories", "Digital Marketing", "Social Media", "Journalism"],
+      "careerOpportunities": ["Social Media Manager", "PR Specialist", "Journalist"],
+      "employmentRate": 78,
+      "laboratoryHours": 12,
+      "longDescription": "Training in the field of modern communication and media. The course prepares communication professionals with skills in digital marketing, journalism, and social media. Students will develop the ability to manage communication in various media and business contexts."
+    }
+  }
+]
