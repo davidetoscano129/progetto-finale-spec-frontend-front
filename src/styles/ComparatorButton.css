@@ -21,7 +21,7 @@
 .faculty-search-input {
   width: 100%;
   padding: 8px 12px;
-  height: 38px; /* Ensures it's the same height as the select */
+  height: 38px;
 }
 
 /* Results dropdown */
@@ -77,7 +77,7 @@
   text-align: center;
 }
 
-/* Media query for small screens */
+/* Responsive */
 @media (max-width: 576px) {
   .filters-row {
     flex-direction: column;

@@ -1,9 +1,13 @@
 import React from "react";
 import FacultyRow from "./FacultyRow";
+import SortButton from "../filters/SortButton";
+import "../../styles/FacultiesTable.css";
 
 const FacultiesTable = ({
   faculties,
   countInfo,
+  sortAsc,
+  onSortToggle,
   emptyMessage = "No faculties match your search criteria",
 }) => {
   return (
@@ -17,7 +21,16 @@ const FacultiesTable = ({
       <table className="table table-hover">
         <thead>
           <tr>
-            <th className="col-6">Faculty Name</th>
+            <th className="col-6">
+              <div className="d-flex align-items-center">
+                Faculty Name
+                {onSortToggle && (
+                  <div className="ms-2">
+                    <SortButton asc={sortAsc} onToggle={onSortToggle} />
+                  </div>
+                )}
+              </div>
+            </th>
             <th className="col-5">Category</th>
             <th className="col-1"></th>
           </tr>

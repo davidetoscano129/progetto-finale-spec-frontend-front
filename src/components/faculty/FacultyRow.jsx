@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
-import "../../styles/FacultyRow.css";
 
 export default function FacultyRow({ faculty, onFavorite }) {
   const navigate = useNavigate();

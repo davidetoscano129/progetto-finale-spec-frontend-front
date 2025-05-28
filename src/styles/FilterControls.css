@@ -17,13 +17,13 @@
   font-size: 1.05rem;
 }
 
-/* Media query per schermi piccoli */
+/* Responsive */
 @media (max-width: 576px) {
   .filter-controls {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .filter-category-select {
     margin-bottom: 0.5rem;
   }

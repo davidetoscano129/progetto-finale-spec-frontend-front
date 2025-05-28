@@ -8,10 +8,15 @@ const EmptyState = ({
   message = "There's nothing to show here right now.",
   actionLink = null,
   actionText = "Go back",
+  actionIcon = "search",
   iconClass = "text-danger",
+  customClass = "",
+  buttonClass = "",
 }) => {
   return (
-    <div className="empty-state card shadow-sm p-5 text-center">
+    <div
+      className={`empty-state card shadow-sm p-5 text-center ${customClass}`}
+    >
       <div className="icon-container mb-4">
         <i className={`bi bi-${icon} empty-state-icon ${iconClass}`}></i>
       </div>
@@ -19,11 +24,25 @@ const EmptyState = ({
       <p className="empty-state-message text-muted mb-4">{message}</p>
       {actionLink && (
         <div className="empty-state-action">
-          <Link to={actionLink} className="btn btn-primary empty-state-button">
-            <i className="bi bi-search me-2"></i>{" "}
-            {/* Aggiunto icona al pulsante */}
-            {actionText}
-          </Link>
+          {actionLink.startsWith("http") ? (
+            <a
+              href={actionLink}
+              className={`btn empty-state-button ${buttonClass}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className={`bi bi-${actionIcon} me-2`}></i>
+              {actionText}
+            </a>
+          ) : (
+            <Link
+              to={actionLink}
+              className={`btn empty-state-button ${buttonClass}`}
+            >
+              <i className={`bi bi-${actionIcon} me-2`}></i>
+              {actionText}
+            </Link>
+          )}
         </div>
       )}
     </div>

@@ -3,16 +3,16 @@ import "../../styles/SortButton.css";
 export default function SortButton({ asc, onToggle }) {
   return (
     <button
-      className="btn btn-outline-secondary sort-button"
+      className="sort-button"
       onClick={onToggle}
+      title={asc ? "Sort Z to A" : "Sort A to Z"}
       aria-label={asc ? "Sort Z to A" : "Sort A to Z"}
     >
       <i
         className={`bi ${
           asc ? "bi-sort-alpha-down" : "bi-sort-alpha-up-alt"
-        } me-2`}
+        } sort-button-icon ${asc ? "asc" : "desc"}`}
       ></i>
-      <span className="sort-button-icon">{asc ? "A-Z" : "Z-A"}</span>
     </button>
   );
 }

@@ -26,9 +26,21 @@ export default function SearchBar({
 
   return (
     <div className="search-bar-container" ref={inputRef}>
-      {!hideLabel && (
-        <label className="form-label search-label">Search faculties</label>
-      )}
+      <div className="search-header-wrapper">
+        {!hideLabel && (
+          <label className="form-label search-label">
+            <i className="bi bi-search me-1"></i>
+            Search faculties
+          </label>
+        )}
+        {!hideLabel && (
+          <small className="text-muted search-help-text">
+            <i className="bi bi-info-circle me-1"></i>
+            Type to filter
+          </small>
+        )}
+      </div>
+
       <div className="search-input-wrapper">
         <input
           className={`form-control search-bar-input ${
@@ -49,15 +61,10 @@ export default function SearchBar({
             }}
             aria-label="Clear search"
           >
-            ×
+            <i className="bi bi-x"></i>
           </button>
         )}
       </div>
-      {!hideLabel && (
-        <small className="text-muted search-help-text">
-          Type to filter faculties by name
-        </small>
-      )}
     </div>
   );
 }

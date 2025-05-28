@@ -1,12 +1,29 @@
 .search-bar-container {
-  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.search-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .search-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-family: "Georgia", serif;
+  font-weight: 500;
   color: #495057;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-help-text {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .search-input-wrapper {
@@ -16,51 +33,75 @@
 }
 
 .search-bar-input {
-  width: 100%;
-  padding: 8px 12px;
-  padding-right: 30px; /* Space for the clear button */
-  height: 38px;
-  font-family: "Georgia", serif;
-  font-size: 1rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  background: white;
-  color: #212529;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  border-radius: 0.5rem;
+  height: 42px;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
 }
 
 .search-bar-input:focus,
 .search-bar-input.focused {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background-color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.2);
+  border-color: #8b0000;
 }
 
+.search-bar-input::placeholder {
+  color: #adb5bd;
+  opacity: 0.75;
+}
+
+/* Search icon */
+.search-input-wrapper::before {
+  content: "\f52a";
+  font-family: "Bootstrap Icons";
+  position: absolute;
+  left: 1rem;
+  color: #6c757d;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* Clear button */
 .search-clear-btn {
   position: absolute;
-  right: 8px;
-  background: transparent;
+  right: 0.75rem;
+  background: none;
   border: none;
   color: #6c757d;
   font-size: 1.25rem;
   line-height: 1;
+  padding: 0;
   cursor: pointer;
-  padding: 0 5px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
 .search-clear-btn:hover {
-  color: #212529;
+  background-color: rgba(108, 117, 125, 0.1);
+  color: #495057;
 }
 
-.search-help-text {
-  display: block;
-  margin-top: 0.25rem;
-  font-family: "Georgia", serif;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-bar-input {
+    height: 38px;
+  }
 
-/* Media query for small screens */
-@media (max-width: 576px) {
-  .search-bar-container {
-    width: 100%;
+  .search-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-help-text {
+    margin-top: 0.25rem;
   }
 }

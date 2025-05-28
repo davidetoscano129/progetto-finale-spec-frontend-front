@@ -1,19 +1,9 @@
-.faculty-info-detail-box {
-  background: #f8f9fa;
-  font-size: 1rem;
-  white-space: pre-line;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  margin-top: 0.25rem;
-}
-
 .description-container {
-  height: 100px; /* For a fixed height */
-  overflow-y: auto; /* Adds vertical scrollbar if necessary */
+  height: 100px;
+  overflow-y: auto;
   margin-bottom: 0.5rem;
 }
 
-/* For a more pleasant scrollbars */
 .description-container::-webkit-scrollbar {
   width: 6px;
 }

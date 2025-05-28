@@ -5,15 +5,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #e3e2d6;
+  background-color: #f5f3eb;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.min-vh-100 {
-  min-height: 100vh;
+.card,
+.navbar,
+footer,
+.container-element {
+  background-color: #f8f8f8;
 }

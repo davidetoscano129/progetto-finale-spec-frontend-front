@@ -1,58 +1,74 @@
+/* Empty state container */
 .empty-state {
-  padding: 4rem 2rem !important;
+  max-width: 100%;
+  margin: 0 auto;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 8px;
+  padding: 3rem 2rem;
 }
 
-.empty-state .icon-container {
-  margin-bottom: 1.5rem;
-}
-
+/* Icon styling */
 .empty-state-icon {
-  font-size: 5rem;
-  color: #8b0000; /* Cambiato al colore bordeaux per coerenza */
-}
-
-.empty-state-icon.text-danger {
+  font-size: 3.5rem;
   color: #8b0000;
 }
 
-.empty-state-icon.bi-bookmark {
-  color: #8b0000; /* Cambiato da bi-heart a bi-bookmark */
-  opacity: 0.8;
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
+/* Title and message */
 .empty-state-title {
-  font-family: "Georgia", serif;
+  font-size: 2rem;
+  font-weight: 600;
   color: #333;
-  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
 .empty-state-message {
-  font-family: "Georgia", serif;
-  color: #666;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #6c757d;
+  max-width: 80%;
+  margin: 0 auto 2rem;
 }
 
-.empty-state-action {
-  margin-top: 0.5rem;
-}
-
+/* Action button */
 .empty-state-button {
-  background-color: #8b0000;  /* Cambiato da blu a bordeaux */
-  border-color: #8b0000;
+  background-color: #1976d2;
+  border-color: #1976d2;
+  color: #fff;
   padding: 0.5rem 1.5rem;
-  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 4px;
 }
 
 .empty-state-button:hover,
 .empty-state-button:focus {
-  background-color: #a52a2a;  /* Colore hover aggiornato */
-  border-color: #8b0000;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25);
+}
+
+/* Browse facilities button (specific to favorites page) */
+.browse-facilities-btn {
+  background-color: #1976d2;
+  border-color: #1976d2;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.browse-facilities-btn:hover,
+.browse-facilities-btn:focus {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25);
 }

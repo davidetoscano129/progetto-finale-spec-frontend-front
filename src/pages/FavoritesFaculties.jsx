@@ -5,7 +5,6 @@ import PageContainer from "../layout/PageContainer";
 import FilterPanel from "../components/filters/FilterPanel";
 import FacultiesTable from "../components/faculty/FacultiesTable";
 import EmptyState from "../components/ui//EmptyState";
-import "../styles/FavoritesFaculties.css";
 
 export default function FavoritesFaculties() {
   const { favorites } = useContext(FavoritesContext);
@@ -34,8 +33,11 @@ export default function FavoritesFaculties() {
 
   return (
     <PageContainer
-      title="Your Favorite Faculties"
-      description="Keep track of the faculties you're interested in comparing. <br /> Review and compare your saved options to make an informed decision about your future."
+      title="Compare Your Top Choices"
+      description="Bookmark programs that align with your goals to create a personalized shortlist. Compare your saved options and make an informed choice for your academic future."
+      backgroundImage="img9.jpg"
+      backgroundOverlay={true}
+      additionalText="Analyze side by side curriculum details, faculty expertise and campus features to find your perfect educational match."
     >
       {favorites?.length === 0 ? (
         <section className="row">
@@ -74,6 +76,8 @@ export default function FavoritesFaculties() {
               <FacultiesTable
                 faculties={filteredFavorites}
                 countInfo={countInfo}
+                sortAsc={sortAsc}
+                onSortToggle={() => setSortAsc((prev) => !prev)}
               />
             </div>
           </section>

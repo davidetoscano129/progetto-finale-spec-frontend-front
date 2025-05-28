@@ -5,7 +5,6 @@ import PageContainer from "../layout/PageContainer";
 import FacultyInfo from "../components/faculty/FacultyInfo";
 import ComparatorButton from "../components/faculty/ComparatorButton";
 import EmptyState from "../components/ui/EmptyState";
-import "../styles/FacultyDetails.css";
 
 export default function FacultyDetails() {
   const { id } = useParams();

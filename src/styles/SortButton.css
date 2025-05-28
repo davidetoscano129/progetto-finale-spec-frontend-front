@@ -1,37 +1,25 @@
 .sort-button {
-  background: transparent;
+  background: none;
   border: none;
-  color: #222;
-  display: flex;
+  color: #8b0000;
+  padding: 0;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Georgia", serif;
-  padding: 0.375rem 0.75rem;
   cursor: pointer;
-  transition: transform 0.2s;
-  font-size: 1rem;
-  min-width: 60px;
-  height: 38px;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .sort-button:hover {
-  background-color: #e9ecef;
+  color: #6d0000;
+  transform: scale(1.1);
 }
 
-.sort-button:active {
-  transform: scale(0.95);
+.sort-button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-.sort-button-icon {
-  margin-right: 0.3rem;
-  transition: transform 0.3s;
-  font-weight: 500;
-}
-
-.sort-button-icon.asc {
-  transform: rotate(0deg);
-}
-
-.sort-button-icon.desc {
-  transform: rotate(180deg);
+.sort-button i {
+  font-size: 0.85rem;
 }

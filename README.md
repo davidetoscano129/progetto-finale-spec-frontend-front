@@ -18,7 +18,7 @@ This project is a frontend application built with React that allows users to com
 
 - React
 - TypeScript
-- Bootstrap for styling
+- CSS & Bootstrap for styling
 
 ## Contributing
 

@@ -5,7 +5,6 @@ import useFilters from "../hooks/useFilters";
 import PageContainer from "../layout/PageContainer";
 import FilterPanel from "../components/filters/FilterPanel";
 import FacultiesTable from "../components/faculty/FacultiesTable";
-import "../styles/FacultiesList.css";
 
 export default function FacultiesList() {
   const { faculties } = useContext(GlobalContext);
@@ -42,10 +41,11 @@ export default function FacultiesList() {
 
   return (
     <PageContainer
-      title="Find Your Perfect Faculty"
-      description={
-        "Compare different faculties and make an informed choice for your future. <br /> Choose the university path that best suits you: explore, compare and find the faculty that reflects your passions and goals."
-      }
+      title="Find Your Academic Path"
+      description="Compare faculties and make an informed choice for your future. Our directory helps you explore academic fields that align with your career aspirations."
+      backgroundImage="img7.jpg"
+      backgroundOverlay={true}
+      additionalText="Discover the university program that best matches your passions. Explore curriculum details, faculty expertise, and career outcomes to make the right choice for your future."
     >
       {/* Filters */}
       <section className="row mb-4">
@@ -67,7 +67,12 @@ export default function FacultiesList() {
       {/* Table */}
       <section className="row">
         <div className="col-12">
-          <FacultiesTable faculties={filteredFaculties} countInfo={countInfo} />
+          <FacultiesTable
+            faculties={filteredFaculties}
+            countInfo={countInfo}
+            sortAsc={sortAsc}
+            onSortToggle={() => setSortAsc((prev) => !prev)}
+          />
         </div>
       </section>
     </PageContainer>

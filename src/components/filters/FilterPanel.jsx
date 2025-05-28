@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
-import SortButton from "./SortButton";
 
 const FilterPanel = ({
   searchTerm,
@@ -22,18 +21,13 @@ const FilterPanel = ({
           <i className="bi bi-search me-2"></i>
           {searchLabel}
         </label>
-        <div className="search-sort-container">
-          <div className="sort-button-container">
-            <SortButton asc={sortAsc} onToggle={onSortToggle} />
-          </div>
-          <div className="faculty-search-container">
-            <SearchBar
-              value={searchTerm}
-              onChange={onSearch}
-              placeholder={searchPlaceholder}
-              hideLabel={true}
-            />
-          </div>
+        <div className="search-container">
+          <SearchBar
+            value={searchTerm}
+            onChange={onSearch}
+            placeholder={searchPlaceholder}
+            hideLabel={true}
+          />
         </div>
       </div>
 
