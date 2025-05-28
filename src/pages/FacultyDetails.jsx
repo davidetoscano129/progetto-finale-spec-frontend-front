@@ -5,6 +5,7 @@ import PageContainer from "../layout/PageContainer";
 import FacultyInfo from "../components/faculty/FacultyInfo";
 import ComparatorButton from "../components/faculty/ComparatorButton";
 import EmptyState from "../components/ui/EmptyState";
+import CloseButton from "../components/ui/CloseButton";
 
 export default function FacultyDetails() {
   const { id } = useParams();
@@ -51,11 +52,7 @@ export default function FacultyDetails() {
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card shadow-sm p-4 h-100 position-relative">
-                <button
-                  className="btn-close comparison-close-btn"
-                  aria-label="Close comparison"
-                  onClick={() => setCompareWith(null)}
-                />
+                <CloseButton onClick={() => setCompareWith(null)} />
                 <FacultyInfo faculty={compareWith} />
               </div>
             </div>
