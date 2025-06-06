@@ -12,7 +12,7 @@
       "careerOpportunities": ["Software Developer", "System Analyst", "DevOps Engineer"],
       "employmentRate": 94,
       "laboratoryHours": 20,
-      "longDescription": "A degree program that trains professionals in the field of computer science and programming. Students will acquire skills in programming, data analysis, software development, and management of complex IT systems. The course prepares professionals highly sought after by the job market."
+      "longDescription": "A degree program that trains professionals in the field of computer science and programming. Students will acquire skills in programming, data analysis, software development, and management of complex IT systems. The course prepares professionals highly sought after by the job market. Throughout the program, students will have access to cutting-edge laboratories and software tools used in industry. Internship opportunities with leading tech companies are available in the final year, providing real-world experience. The curriculum is regularly updated to reflect the latest technological advancements and industry requirements. Graduates often receive job offers before completion of their studies, with many securing positions in multinational corporations or thriving startups."
     } 
   },
   {
@@ -28,7 +28,7 @@
       "careerOpportunities": ["Hospital Doctor", "Surgeon", "Medical Researcher"],
       "employmentRate": 98,
       "laboratoryHours": 30,
-      "longDescription": "A comprehensive training path to become a doctor, with a strong focus on clinical practice. The course provides in-depth preparation in medical-surgical fields, combining theory and practice through internships in hospital facilities. Students acquire complete skills in diagnostics, therapy, and surgery."
+      "longDescription": "A comprehensive training path to become a doctor, with a strong focus on clinical practice. The course provides in-depth preparation in medical-surgical fields, combining theory and practice through internships in hospital facilities. Students acquire complete skills in diagnostics, therapy, and surgery. The program includes extensive hands-on training in simulation centers equipped with anatomical models and virtual reality systems. International exchange opportunities allow students to gain experience in different healthcare systems worldwide. Research projects under the guidance of experienced physicians help develop critical thinking and evidence-based approach to medicine. The final years include rotations in various hospital departments, ensuring graduates are well-prepared for their medical residency and future practice."
     }
   },
   {
@@ -43,7 +43,7 @@
       "careerOpportunities": ["Business Analyst", "Financial Manager", "Marketing Manager"],
       "employmentRate": 88,
       "laboratoryHours": 10,
-      "longDescription": "A training path that provides management and financial skills for the business world. Students will develop skills in economics, management, and finance, preparing to take on key roles in modern organizations. The course combines economic theory and practical management applications."
+      "longDescription": "A training path that provides management and financial skills for the business world. Students will develop skills in economics, management, and finance, preparing to take on key roles in modern organizations. The course combines economic theory and practical management applications. Case studies of successful businesses are regularly analyzed to provide real-world context to theoretical concepts. Guest lectures from industry leaders offer insights into current business practices and challenges. Team projects simulate actual business scenarios, helping students develop leadership, collaboration, and problem-solving skills. Optional specialized tracks in entrepreneurship, international business, or digital marketing allow students to tailor their education to their career goals while building a strong foundation in core business principles."
     }
   },
   {
@@ -59,7 +59,7 @@
       "careerOpportunities": ["Clinical Psychologist", "Psychotherapist", "HR Manager"],
       "employmentRate": 85,
       "laboratoryHours": 15,
-      "longDescription": "A course that trains experts in understanding human behavior. Students will acquire theoretical and practical skills in psychology, developing analytical and intervention skills in various contexts. The path includes internships and practical experiences in clinical and social settings."
+      "longDescription": "A course that trains experts in understanding human behavior. Students will acquire theoretical and practical skills in psychology, developing analytical and intervention skills in various contexts. The path includes internships and practical experiences in clinical and social settings. The program emphasizes scientific research methods and statistical analysis to evaluate psychological theories and interventions. Students learn to conduct psychological assessments using standardized instruments and interpret results with professional rigor. Ethical considerations in psychological practice are thoroughly explored, preparing graduates to handle sensitive situations appropriately. Specialized modules in cognitive-behavioral therapy, child psychology, and organizational psychology provide students with diverse career options in various psychological fields."
     }
   },
   {
@@ -75,7 +75,7 @@
       "careerOpportunities": ["Architect", "Urban Planner", "Interior Designer"],
       "employmentRate": 82,
       "laboratoryHours": 25,
-      "longDescription": "A course that combines creativity and technical skills in the field of design. Students will develop design skills, technical knowledge, and aesthetic sensitivity through practical workshops and the study of architectural history. The path trains professionals capable of designing innovative spaces and structures."
+      "longDescription": "A course that combines creativity and technical skills in the field of design. Students will develop design skills, technical knowledge, and aesthetic sensitivity through practical workshops and the study of architectural history. The path trains professionals capable of designing innovative spaces and structures. Students will work with advanced 3D modeling software and digital fabrication tools, preparing them for the technological demands of modern architectural practice. Sustainability and environmental impact are central themes, with dedicated courses on green building techniques and materials. Field trips to architectural landmarks and construction sites provide firsthand exposure to various design approaches and building methods. Final year projects are often exhibited to the public and industry professionals, giving students visibility and networking opportunities before graduation."
     }
   },
   {
@@ -90,7 +90,7 @@
       "careerOpportunities": ["Lawyer", "Judge", "Notary"],
       "employmentRate": 80,
       "laboratoryHours": 5,
-      "longDescription": "Comprehensive training in the field of law and jurisprudence. The course offers in-depth preparation in all branches of law, training professionals capable of operating in the legal field. Students will develop analytical and interpretative skills of the legal system."
+      "longDescription": "Comprehensive training in the field of law and jurisprudence. The course offers in-depth preparation in all branches of law, training professionals capable of operating in the legal field. Students will develop analytical and interpretative skills of the legal system. The program includes moot court competitions where students argue hypothetical cases before panels of practicing attorneys and judges. Legal clinics provide practical experience in assisting real clients under faculty supervision. Advanced legal research and writing courses develop essential skills for effective legal practice. The curriculum covers both national and international law, preparing graduates to work in increasingly globalized legal environments and handle cross-border legal issues effectively."
     }
   },
   {
@@ -105,7 +105,7 @@
       "careerOpportunities": ["Researcher", "Data Scientist", "Nuclear Physicist"],
       "employmentRate": 92,
       "laboratoryHours": 25,
-      "longDescription": "In-depth study of the fundamental laws of the universe. The course combines advanced physical theory with practical applications through laboratory experiments. Students will develop advanced mathematical and analytical skills, preparing for careers in research and industry."
+      "longDescription": "In-depth study of the fundamental laws of the universe. The course combines advanced physical theory with practical applications through laboratory experiments. Students will develop advanced mathematical and analytical skills, preparing for careers in research and industry. The program provides access to sophisticated experimental equipment, allowing students to conduct cutting-edge research even at undergraduate level. Computational physics courses teach programming skills essential for modern scientific research and data analysis. Collaboration with national and international research institutes offers opportunities to participate in groundbreaking physics projects. Beyond traditional physics careers, graduates are highly valued in fields requiring analytical thinking, including finance, technology development, and renewable energy, due to their strong problem-solving and quantitative reasoning abilities."
     }
   },
   {
@@ -120,7 +120,7 @@
       "careerOpportunities": ["Translator", "Interpreter", "Teacher"],
       "employmentRate": 75,
       "laboratoryHours": 15,
-      "longDescription": "A path for experts in languages and international communication. Students will develop advanced language skills in several languages, along with a deep understanding of the associated cultures. The course prepares for careers in international fields, translation, and teaching."
+      "longDescription": "A path for experts in languages and international communication. Students will develop advanced language skills in several languages, along with a deep understanding of the associated cultures. The course prepares for careers in international fields, translation, and teaching. Language immersion programs and study abroad opportunities allow students to perfect their language skills in native-speaking environments. Digital humanities approaches to literature and linguistics introduce students to computational analysis of texts and language patterns. Translation workshops with professional translators provide practical experience with various text types, from literary to technical documents. The program also explores intercultural communication strategies, essential for effective international business relations and diplomatic contexts in our increasingly connected global society."
     }
   },
   {
@@ -136,7 +136,7 @@
       "careerOpportunities": ["Biotech Researcher", "Quality Control", "Product Developer"],
       "employmentRate": 88,
       "laboratoryHours": 30,
-      "longDescription": "Study of technological applications in the biological field. The course provides advanced skills in molecular biology and biotechnologies, with a strong emphasis on laboratory practice. Students prepare for careers in biotechnological research and the pharmaceutical industry."
+      "longDescription": "Study of technological applications in the biological field. The course provides advanced skills in molecular biology and biotechnologies, with a strong emphasis on laboratory practice. Students prepare for careers in biotechnological research and the pharmaceutical industry. The curriculum includes specialized modules on emerging biotechnology fields such as CRISPR gene editing, synthetic biology, and bioinformatics. Industry partnerships provide opportunities for internships in biotech companies and pharmaceutical research labs. Students learn to operate sophisticated laboratory equipment including PCR machines, mass spectrometers, and cell culture facilities. The program addresses ethical considerations in biotechnology, preparing graduates to navigate complex questions regarding genetic engineering, cloning, and other controversial applications of biological technologies."
     }
   },
   {
@@ -151,7 +151,7 @@
       "careerOpportunities": ["Social Media Manager", "PR Specialist", "Journalist"],
       "employmentRate": 78,
       "laboratoryHours": 12,
-      "longDescription": "Training in the field of modern communication and media. The course prepares communication professionals with skills in digital marketing, journalism, and social media. Students will develop the ability to manage communication in various media and business contexts."
+      "longDescription": "Training in the field of modern communication and media. The course prepares communication professionals with skills in digital marketing, journalism, and social media. Students will develop the ability to manage communication in various media and business contexts. The program includes hands-on projects creating multimedia content for real clients, building a professional portfolio before graduation. Data analytics courses teach students how to measure communication effectiveness and optimize strategies based on audience metrics. Crisis communication training prepares graduates to handle challenging public relations situations with strategic thinking and ethical approaches. Students gain experience with industry-standard software for graphic design, video editing, and content management systems, ensuring technical proficiency alongside theoretical understanding of communication principles."
     }
   }
 ]
