@@ -35,12 +35,11 @@ const ComparatorButton = ({ faculty, onCompare }) => {
     // Filter by search term if present
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
-      result = result.filter(
-        (f) =>
-          f.title.toLowerCase().includes(term) ||
-          f.category.toLowerCase().includes(term)
-      );
+      result = result.filter((f) => f.title.toLowerCase().includes(term));
     }
+
+    // Sort alphabetically by title (consistent with FacultiesList)
+    result = [...result].sort((a, b) => a.title.localeCompare(b.title));
 
     return result;
   }, [otherFaculties, searchTerm, selectedCategory]);
