@@ -1,8 +1,10 @@
 export default function PackageDetail() {
   return (
-    <>
-      <h1>Pakcage Details</h1>
-      <p>The list of packages details will be shown here</p>
-    </>
+    <div className="page-container">
+      <h1>Package Details</h1>
+      <div className="card">
+        <p>The package details will be shown here</p>
+      </div>
+    </div>
   );
 }

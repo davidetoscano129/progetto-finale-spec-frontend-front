@@ -1,8 +1,10 @@
 export default function PackageList() {
   return (
-    <>
-      <h1>Cunsulting Package List</h1>
-      <p>The list of packages will be shown here</p>
-    </>
+    <div className="page-container">
+      <h1>Consulting Package List</h1>
+      <div className="card">
+        <p>The list of packages will be shown here</p>
+      </div>
+    </div>
   );
 }
