@@ -90,6 +90,77 @@ p {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+thead th {
+  color: white;
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: scale(1.01);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 1.2rem 1.5rem;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+tbody td:first-child {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+}
+
+.empty-state h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   nav {
@@ -108,5 +179,56 @@ p {
 
   h1 {
     font-size: 2rem;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tbody tr {
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  tbody tr:hover {
+    transform: none;
+    background-color: #f8f9ff;
+  }
+
+  tbody td {
+    border: none;
+    position: relative;
+    padding: 0.8rem 0 0.8rem 40%;
+    text-align: right;
+  }
+
+  tbody td:before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 0;
+    width: 35%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+  }
+
+  tbody td:first-child:before {
+    content: "Package Name: ";
+  }
+
+  tbody td:nth-child(2):before {
+    content: "Industry Category: ";
   }
 }
