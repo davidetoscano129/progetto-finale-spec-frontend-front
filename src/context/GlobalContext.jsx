@@ -1,20 +1,13 @@
-import { createContext, useState, useEffect } from "react";
-const { VITE_API_URL } = import.meta.env;
+import { createContext } from "react";
+import usePackages from "../hooks/usePackages";
 
 export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-  const [packages, setPackages] = useState([]);
-
-  useEffect(() => {
-    fetch(`${VITE_API_URL}/consultingpackages`)
-      .then((res) => res.json())
-      .then((data) => setPackages(data))
-      .catch((error) => console.error(error));
-  }, []);
+  const packagesFetch = usePackages();
 
   return (
-    <GlobalContext.Provider value={{ packages, setPackages }}>
+    <GlobalContext.Provider value={{ ...packagesFetch }}>
       {children}
     </GlobalContext.Provider>
   );
