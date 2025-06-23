@@ -11,13 +11,13 @@ function App() {
         <nav>
           <NavLink to="/">Consulting Package List</NavLink>
           <NavLink to="/favorites">Favorites Consulting Packages</NavLink>
-          <NavLink to="/id">Package Details</NavLink>
+          <NavLink to="/package/:id">Package Details</NavLink>
         </nav>
 
         <Routes>
           <Route path="/" element={<PackageList />} />
           <Route path="/favorites" element={<PackageFavs />} />
-          <Route path="/id" element={<PackageDetail />} />
+          <Route path="/package/:id" element={<PackageDetail />} />
         </Routes>
       </BrowserRouter>
     </GlobalProvider>

@@ -3,8 +3,19 @@ import { GlobalContext } from "../context/GlobalContext";
 import PackageRow from "../components/PackageRow";
 
 export default function PackageList() {
-  const { packages } = useContext(GlobalContext);
+  const { packages, loading } = useContext(GlobalContext);
   console.log("Packages:", packages);
+
+  if (loading) {
+    return (
+      <div className="page-container">
+        <h1>Consulting Package List</h1>
+        <div className="card">
+          <p>Loading packages...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page-container">
