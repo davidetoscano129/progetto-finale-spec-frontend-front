@@ -23,7 +23,7 @@ export default function PackageList() {
 
   return (
     <div className="page-container">
-      <h1>Consulting Package List</h1>
+      <h1>Consulting Packages</h1>
 
       <div className="card">
         {filteredAndSortedPackages.length > 0 ? (

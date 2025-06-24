@@ -20,11 +20,13 @@ export default function usePackageFiltering(packages) {
   );
 
   const handleSort = (field) => {
-    if (sortBy === field) {
-      setSortOrder((prev) => prev * -1);
-    } else {
-      setSortBy(field);
-      setSortOrder(1);
+    if (field === "title") {
+      if (sortBy === field) {
+        setSortOrder((prev) => prev * -1);
+      } else {
+        setSortBy(field);
+        setSortOrder(1);
+      }
     }
   };
 
@@ -40,12 +42,7 @@ export default function usePackageFiltering(packages) {
         return titleWords.some((word) => word.startsWith(query));
       })
       .sort((a, b) => {
-        let comparison;
-        if (sortBy === "title") {
-          comparison = a.title.localeCompare(b.title);
-        } else if (sortBy === "category") {
-          comparison = a.category.localeCompare(b.category);
-        }
+        const comparison = a.title.localeCompare(b.title);
         return comparison * sortOrder;
       });
   }, [packages, sortBy, sortOrder, searchQuery]);
@@ -58,6 +55,6 @@ export default function usePackageFiltering(packages) {
     sortIcon,
     filteredAndSortedPackages,
     handleSort,
-    debouncedSetSearchQuery
+    debouncedSetSearchQuery,
   };
 }
