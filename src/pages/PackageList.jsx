@@ -1,10 +1,68 @@
-import { useContext } from "react";
+import { useState, useContext, useMemo, useCallback } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import PackageRow from "../components/PackageRow";
 
+// Debounce function to limit the number of times a function can be called
+function debounce(callback, delay) {
+  let timer;
+  return (value) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      callback(value);
+    }, delay);
+  };
+}
+
 export default function PackageList() {
   const { packages, loading } = useContext(GlobalContext);
-  console.log("Packages:", packages);
+
+  const [sortBy, setSortBy] = useState("title");
+  const [sortOrder, setSortOrder] = useState(1);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const debouncedSetSearchQuery = useCallback(
+    debounce(setSearchQuery, 500),
+    []
+  );
+
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder((prev) => prev * -1);
+    } else {
+      setSortBy(field);
+      setSortOrder(1);
+    }
+  };
+
+  const sortIcon = sortOrder === 1 ? "↓" : "↑";
+
+  const filteredAndSortedPackage = useMemo(() => {
+    if (!packages || packages.length === 0) {
+      return [];
+    }
+
+    return [...packages]
+      .filter((pkg) => {
+        if (!searchQuery) return true;
+
+        const query = searchQuery.toLowerCase();
+        const title = pkg.title.toLowerCase();
+
+        const titleWords = title.split(" ");
+
+        return titleWords.some((word) => word.startsWith(query));
+      })
+      .sort((a, b) => {
+        let comparison;
+
+        if (sortBy === "title") {
+          comparison = a.title.localeCompare(b.title);
+        } else if (sortBy === "category") {
+          comparison = a.category.localeCompare(b.category);
+        }
+        return comparison * sortOrder;
+      });
+  }, [packages, sortBy, sortOrder, searchQuery]);
 
   if (loading) {
     return (
@@ -22,20 +80,35 @@ export default function PackageList() {
       <h1>Consulting Package List</h1>
 
       <div className="card">
-        {packages && packages.length > 0 ? (
-          <table>
-            <thead>
-              <tr>
-                <th>Package Name</th>
-                <th>Industry Category</th>
-              </tr>
-            </thead>
-            <tbody>
-              {packages.map((pkg) => (
-                <PackageRow key={pkg.id} packageData={pkg} />
-              ))}
-            </tbody>
-          </table>
+        {filteredAndSortedPackage && filteredAndSortedPackage.length > 0 ? (
+          <div>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search packages..."
+                onChange={(e) => debouncedSetSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th onClick={() => handleSort("title")}>
+                    {" "}
+                    Package Name {sortBy === "title" && sortIcon}{" "}
+                  </th>
+                  <th onClick={() => handleSort("category")}>
+                    Industry Category {sortBy === "category" && sortIcon}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredAndSortedPackage.map((pkg) => (
+                  <PackageRow key={pkg.id} packageData={pkg} />
+                ))}
+              </tbody>
+            </table>
+          </div>
         ) : (
           <div className="empty-state">
             <h3>No packages available</h3>

@@ -9,9 +9,11 @@ function App() {
     <GlobalProvider>
       <BrowserRouter>
         <nav>
-          <NavLink to="/">Consulting Package List</NavLink>
-          <NavLink to="/favorites">Favorites Consulting Packages</NavLink>
-          <NavLink to="/package/:id">Package Details</NavLink>
+          <div className="nav-container">
+            <NavLink to="/">Consulting Package List</NavLink>
+            <NavLink to="/favorites">Favorites Consulting Packages</NavLink>
+            <NavLink to="/package/:id">Package Details</NavLink>
+          </div>
         </nav>
 
         <Routes>

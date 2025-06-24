@@ -6,7 +6,9 @@ const PackageRow = function ({ packageData }) {
       <td>
         <Link to={`/package/${packageData.id}`}>{packageData.title}</Link>
       </td>
-      <td>{packageData.category}</td>
+      <td>
+        <span className="category-badge">{packageData.category}</span>
+      </td>
     </tr>
   );
 };
