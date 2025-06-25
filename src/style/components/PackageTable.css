@@ -8,6 +8,7 @@ table {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* HEADER */
 thead {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -26,6 +27,7 @@ thead th:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* BODY */
 tbody tr {
   transition: all 0.3s ease;
   border-bottom: 1px solid #eee;
@@ -33,10 +35,6 @@ tbody tr {
 
 tbody tr:nth-child(even) {
   background-color: #f8f9fa;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: white;
 }
 
 tbody tr:hover {
@@ -90,7 +88,6 @@ tbody td a:hover {
 
 /* RESPONSIVE TABLE */
 @media (max-width: 768px) {
-  /* Table - Mobile Layout */
   table {
     border: none;
     box-shadow: none;
@@ -120,8 +117,7 @@ tbody td a:hover {
     background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%) !important;
   }
 
-  tbody tr:nth-child(even),
-  tbody tr:nth-child(odd) {
+  tbody tr:nth-child(even) {
     background: white;
   }
 
@@ -168,10 +164,6 @@ tbody td a:hover {
 @media (max-width: 480px) {
   tbody tr {
     padding: 1rem 0.8rem;
-  }
-
-  tbody td:first-child {
-    font-size: 0.9rem;
   }
 
   tbody td:first-child a {

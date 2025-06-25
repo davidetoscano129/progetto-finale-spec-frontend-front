@@ -46,18 +46,7 @@ h1 {
   background-clip: text;
 }
 
-p {
-  font-size: 1.1rem;
-  color: #666;
-  text-align: center;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
-
-/* RESPONSIVE TYPOGRAPHY */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .page-container {
     padding: 1rem 0.5rem;

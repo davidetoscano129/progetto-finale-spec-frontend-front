@@ -1,6 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import LoadingState from "../components/LoadingState";
+import EmptyState from "../components/EmptyState";
+import PackageInfo from "../components/PackageInfo";
+import "../style/pages/PackageDetail.css";
 
 export default function PackageDetail() {
   const { id } = useParams();
@@ -27,63 +31,24 @@ export default function PackageDetail() {
   }, [id, fetchPackageDetails]);
 
   if (loading) {
-    return (
-      <div className="page-container">
-        <h1>Package Details</h1>
-        <div className="card">
-          <p>Loading package details...</p>
-        </div>
-      </div>
-    );
+    return <LoadingState title="Package Details" />;
   }
 
   if (!packageData) {
     return (
-      <div className="page-container">
-        <h1>Package Not Found</h1>
-        <div className="card">
-          <p>The package with ID {id} does not exist.</p>
-        </div>
+      <div className="package-detail-container">
+        <EmptyState
+          title="Package Not Found"
+          message={`The package with ID ${id} does not exist.`}
+        />
       </div>
     );
   }
 
   return (
-    <div className="page-container">
-      <h1>Package Details</h1>
-      <div className="card">
-        <p>
-          <strong>Name: </strong>
-          {packageData.title}
-        </p>
-        <p>
-          <strong>Category: </strong>
-          {packageData.category}
-        </p>
-        <p>
-          <strong>Duration: </strong>
-          {packageData.details.duration} weeks
-        </p>
-        <p>
-          <strong>Price: </strong>€{packageData.details.price}
-        </p>
-        <p>
-          <strong>Team size: </strong>
-          {packageData.details.team_size} consultants
-        </p>
-        <p>
-          <strong>Remote option: </strong>
-          {packageData.details.remote_option ? "Yes" : "No"}
-        </p>
-        <p>
-          <strong>Support: </strong>
-          {packageData.details.support}
-        </p>
-        <p>
-          <strong>Best for: </strong>
-          {packageData.details.best_for}
-        </p>
-      </div>
+    <div className="package-detail-container">
+      <h1 className="package-detail-title">Package Details</h1>
+      <PackageInfo packageData={packageData} />
     </div>
   );
 }
