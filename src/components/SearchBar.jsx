@@ -1,3 +1,5 @@
+import "../style/components/SearchBar.css";
+
 export default function SearchBar({ onSearch, placeholder = "Search..." }) {
   return (
     <div className="search-bar">

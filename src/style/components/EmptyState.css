@@ -1,0 +1,31 @@
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.empty-state h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE EMPTY STATE */
+@media (max-width: 768px) {
+  .empty-state {
+    padding: 3rem 1rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.3rem;
+  }
+}

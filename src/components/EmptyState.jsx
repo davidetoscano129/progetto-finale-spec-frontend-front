@@ -1,6 +1,8 @@
-export default function EmptyState({ 
+import "../style/components/EmptyState.css";
+
+export default function EmptyState({
   title = "No packages available",
-  message = "Check back later for consulting packages." 
+  message = "Check back later for consulting packages.",
 }) {
   return (
     <div className="empty-state">

@@ -1,4 +1,5 @@
 import PackageRow from "./PackageRow";
+import "../style/components/PackageTable.css";
 
 export default function PackageTable({ packages, sortBy, sortIcon, onSort }) {
   return (
