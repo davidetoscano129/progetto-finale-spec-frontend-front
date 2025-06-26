@@ -9,7 +9,7 @@ function debounce(callback, delay) {
   };
 }
 
-export default function usePackageFiltering(packages) {
+export default function usePackageFiltering(packages, selectedCategory = "") {
   const [sortBy, setSortBy] = useState("title");
   const [sortOrder, setSortOrder] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,6 +35,10 @@ export default function usePackageFiltering(packages) {
 
     return [...packages]
       .filter((pkg) => {
+        if (selectedCategory && pkg.category !== selectedCategory) {
+          return false;
+        }
+
         if (!searchQuery) return true;
         const query = searchQuery.toLowerCase();
         const title = pkg.title.toLowerCase();
@@ -45,7 +49,7 @@ export default function usePackageFiltering(packages) {
         const comparison = a.title.localeCompare(b.title);
         return comparison * sortOrder;
       });
-  }, [packages, sortBy, sortOrder, searchQuery]);
+  }, [packages, sortBy, sortOrder, searchQuery, selectedCategory]);
 
   const sortIcon = sortOrder === 1 ? "↓" : "↑";
 

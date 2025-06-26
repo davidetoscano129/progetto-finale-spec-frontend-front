@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useMemo } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import SearchBar from "../components/SearchBar";
 import PackageTable from "../components/PackageTable";
@@ -8,6 +8,24 @@ import usePackageFiltering from "../hooks/usePackageFiltering";
 
 export default function PackageList() {
   const { packages, loading } = useContext(GlobalContext);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const categories = useMemo(() => {
+    if (!packages || packages.length === 0) return [];
+    
+    const uniqueCategories = [];
+    packages.forEach((pkg) => {
+      if (!uniqueCategories.includes(pkg.category)) {
+        uniqueCategories.push(pkg.category);
+      }
+    });
+    
+    return uniqueCategories.sort();
+  }, [packages]);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
   const {
     sortBy,
@@ -15,7 +33,7 @@ export default function PackageList() {
     filteredAndSortedPackages,
     handleSort,
     debouncedSetSearchQuery,
-  } = usePackageFiltering(packages);
+  } = usePackageFiltering(packages, selectedCategory);
 
   if (loading) {
     return <LoadingState />;
@@ -26,18 +44,33 @@ export default function PackageList() {
       <h1>Consulting Packages</h1>
 
       <div className="card">
-        {filteredAndSortedPackages.length > 0 ? (
+        {packages.length > 0 ? (
           <div>
             <SearchBar
               onSearch={debouncedSetSearchQuery}
               placeholder="Search packages..."
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onCategoryChange={handleCategoryChange}
+              categoriesLoading={loading}
             />
-            <PackageTable
-              packages={filteredAndSortedPackages}
-              sortBy={sortBy}
-              sortIcon={sortIcon}
-              onSort={handleSort}
-            />
+            {filteredAndSortedPackages.length > 0 ? (
+              <PackageTable
+                packages={filteredAndSortedPackages}
+                sortBy={sortBy}
+                sortIcon={sortIcon}
+                onSort={handleSort}
+              />
+            ) : (
+              <EmptyState
+                title="No packages found"
+                message={
+                  selectedCategory
+                    ? `No packages found in "${selectedCategory}" category with your search criteria.`
+                    : "No packages found with your search criteria."
+                }
+              />
+            )}
           </div>
         ) : (
           <EmptyState />
