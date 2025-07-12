@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "Digital Transformation Strategy",
+    "category": "Digital",
+    "details": {
+      "duration": 8,
+      "price": 15000,
+      "team_size": 3,
+      "remote_option": true,
+      "support": "6 months",
+      "best_for": "Large companies"
+    }
+  },
+  {
+    "id": 2,
+    "title": "GDPR Compliance Audit",
+    "category": "Legal",
+    "details": {
+      "duration": 4,
+      "price": 8500,
+      "team_size": 2,
+      "remote_option": false,
+      "support": "3 months",
+      "best_for": "SMEs"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Cybersecurity Assessment",
+    "category": "IT Security",
+    "details": {
+      "duration": 6,
+      "price": 12000,
+      "team_size": 4,
+      "remote_option": true,
+      "support": "12 months",
+      "best_for": "Large companies"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Lean Process Optimization",
+    "category": "Operations",
+    "details": {
+      "duration": 12,
+      "price": 18000,
+      "team_size": 2,
+      "remote_option": false,
+      "support": "6 months",
+      "best_for": "SMEs"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Cloud Migration Planning",
+    "category": "Digital",
+    "details": {
+      "duration": 10,
+      "price": 22000,
+      "team_size": 5,
+      "remote_option": true,
+      "support": "9 months",
+      "best_for": "Large companies"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Startup Business Plan Review",
+    "category": "Strategy",
+    "details": {
+      "duration": 3,
+      "price": 4500,
+      "team_size": 1,
+      "remote_option": true,
+      "support": "none",
+      "best_for": "Startups"
+    }
+  },
+  {
+    "id": 7,
+    "title": "HR Digital Transformation",
+    "category": "Human Resources",
+    "details": {
+      "duration": 14,
+      "price": 16500,
+      "team_size": 3,
+      "remote_option": true,
+      "support": "6 months",
+      "best_for": "SMEs"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Financial Controls Implementation",
+    "category": "Finance",
+    "details": {
+      "duration": 16,
+      "price": 25000,
+      "team_size": 4,
+      "remote_option": false,
+      "support": "12 months",
+      "best_for": "Large companies"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Market Entry Strategy",
+    "category": "Strategy",
+    "details": {
+      "duration": 5,
+      "price": 7500,
+      "team_size": 2,
+      "remote_option": true,
+      "support": "3 months",
+      "best_for": "Startups"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Supply Chain Optimization",
+    "category": "Operations",
+    "details": {
+      "duration": 20,
+      "price": 30000,
+      "team_size": 6,
+      "remote_option": false,
+      "support": "18 months",
+      "best_for": "Large companies"
+    }
+  }
+]
