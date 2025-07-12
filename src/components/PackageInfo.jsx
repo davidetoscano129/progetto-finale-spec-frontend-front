@@ -11,24 +11,21 @@ export default function PackageInfo({ packageData }) {
   return (
     <div className="package-info">
       <div className="package-header">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <div>
+        <div className="package-header-content">
+          <div className="package-title-section">
             <h2 className="package-name">{packageData.title}</h2>
             <span className="package-category-badge">
               {packageData.category}
             </span>
           </div>
-          <FavoriteButton
-            packageId={packageData.id}
-            isFavorite={isFavorite(packageData.id)}
-            onToggle={toggleFavorite}
-          />
+          <div className="package-actions">
+            <FavoriteButton
+              packageId={packageData.id}
+              isFavorite={isFavorite(packageData.id)}
+              onToggle={toggleFavorite}
+              className="header-btn"
+            />
+          </div>
         </div>
       </div>
 

@@ -18,8 +18,25 @@
 .package-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2.5rem 2rem;
-  text-align: center;
   position: relative;
+}
+
+.package-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.package-title-section {
+  text-align: center;
+  flex: 1;
+}
+
+.package-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .package-header::after {
@@ -198,6 +215,16 @@
     padding: 2rem 1.5rem;
   }
 
+  .package-header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .package-actions {
+    position: static;
+  }
+
   .package-name {
     font-size: 1.6rem;
   }
@@ -227,6 +254,16 @@
 @media (max-width: 480px) {
   .package-header {
     padding: 1.5rem 1rem;
+  }
+
+  .package-header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .package-actions {
+    position: static;
   }
 
   .package-name {
